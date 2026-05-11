@@ -1,5 +1,4 @@
 import React from "react";
-import { ButtonOutline } from "../Buttons";
 
 const PricingSection: React.FC = () => {
   const plans = [

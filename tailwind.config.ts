@@ -35,9 +35,50 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        slideUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(22px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        slideInLeft: {
+          from: {
+            opacity: "0",
+            transform: "translateX(-18px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        slideInRight: {
+          from: {
+            opacity: "0",
+            transform: "translateX(18px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        btnBounce: {
+          "0%": { transform: "scale(1)" },
+          "30%": { transform: "scale(0.92)" },
+          "60%": { transform: "scale(1.06)" },
+          "80%": { transform: "scale(0.98)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.3s ease-in",
+        slideUp: "slideUp 0.55s ease forwards",
+        slideInLeft: "slideInLeft 0.5s ease forwards",
+        slideInRight: "slideInRight 0.5s ease forwards",
+        btnBounce: "btnBounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97)",
       },
     },
   },

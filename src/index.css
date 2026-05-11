@@ -39,3 +39,412 @@ h6 {
 .spark-sm {
   font-size: 0.875rem;
 }
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-stagger {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.reveal-stagger.visible {
+  animation: slideUp 0.55s ease forwards;
+}
+
+.reveal-stagger:nth-child(1) {
+  animation-delay: 0s;
+}
+.reveal-stagger:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.reveal-stagger:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.reveal-stagger:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.reveal-stagger:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ════════════════════════════════════
+   BUTTON ANIMATIONS
+════════════════════════════════════ */
+
+/* Click Bounce */
+@keyframes btnBounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  80% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-bounce {
+  animation: btnBounce 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* BTN1 — Lime flood + label transition */
+.btn1 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  background: #0d1b2a;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.btn1__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  background: #e8a020;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  transition: background 0.35s;
+  overflow: hidden;
+}
+
+.btn1__icon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn1__label {
+  padding: 0 1.3rem 0 0.9rem;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.2s 0.05s, transform 0.3s;
+}
+
+.btn1__flood {
+  position: absolute;
+  inset: 0;
+  background: #e8a020;
+  transform: translateX(-100%);
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.15, 1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 54px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.btn1__flood-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0d1b2a;
+  white-space: nowrap;
+}
+
+.btn1:hover .btn1__flood {
+  transform: translateX(0);
+}
+
+.btn1:hover .btn1__label {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.btn1:hover .btn1__icon {
+  background: #c4881a;
+}
+
+/* BTN1 Amber variant */
+.btn1--amber {
+  background: #e8a020;
+}
+
+.btn1--amber .btn1__icon {
+  background: #0d1b2a;
+}
+
+.btn1--amber .btn1__flood {
+  background: #e8a020;
+}
+
+.btn1--amber .btn1__label {
+  color: #0d1b2a;
+}
+
+/* BTN-APPLE — Icon exits left, arrow enters right */
+.btn-apple {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 1.8rem;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  background: #0d1b2a;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: padding 0.36s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
+}
+
+.btn-apple__icon {
+  display: inline-flex;
+  align-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  overflow: hidden;
+  margin-right: 0.6rem;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: width 0.34s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s,
+    margin 0.34s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-apple__text {
+  transition: transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-apple__arrow {
+  display: inline-flex;
+  align-items: center;
+  width: 0;
+  overflow: hidden;
+  margin-left: 0;
+  opacity: 0;
+  font-size: 1rem;
+  transform: translateX(-6px);
+  transition: width 0.34s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.24s 0.08s, transform 0.34s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.34s;
+}
+
+.btn-apple:hover {
+  padding: 0 2.1rem;
+}
+
+.btn-apple:hover .btn-apple__icon {
+  width: 0;
+  margin-right: 0;
+  opacity: 0;
+  transform: translateX(-16px);
+}
+
+.btn-apple:hover .btn-apple__text {
+  transform: translateX(-4px);
+}
+
+.btn-apple:hover .btn-apple__arrow {
+  width: 1.1rem;
+  opacity: 1;
+  transform: translateX(4px);
+  margin-left: 0.45rem;
+}
+
+.btn-apple--amber {
+  background: #e8a020;
+  color: #0d1b2a;
+}
+
+.btn-apple--amber:hover {
+  background: #c4881a;
+}
+
+/* BTN3 — Pipe to arrow animation */
+.btn3 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem 0.5rem 0.6rem;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  color: #0d1b2a;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.btn3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.btn3:hover::before {
+  transform: scaleX(1);
+}
+
+.btn3__bar {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.btn3__bar::before {
+  content: "|";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #e8a020;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.18s;
+}
+
+.btn3__bar::after {
+  content: "→";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #e8a020;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
+}
+
+.btn3:hover .btn3__bar::before {
+  transform: translateY(-110%);
+  opacity: 0;
+}
+
+.btn3:hover .btn3__bar::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.btn3__text {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn3:hover .btn3__text {
+  transform: translateX(2px);
+}

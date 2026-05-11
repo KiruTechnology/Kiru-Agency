@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonApple } from "../Buttons";
+import { Reveal } from "../Reveal";
 
 const FeaturesSection: React.FC = () => {
   const features = [
@@ -54,32 +55,33 @@ const FeaturesSection: React.FC = () => {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-2xl border border-slate-mid/30 bg-gradient-to-br from-slate-mid/10 to-slate/10 hover:border-amber/30 transition-colors duration-300 group"
-            >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+            <Reveal key={idx} delay={idx * 100}>
+              <div className="p-6 rounded-2xl border border-slate-mid/30 bg-gradient-to-br from-slate-mid/10 to-slate/10 hover:border-amber/30 transition-colors duration-300 group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-chalk mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-chalk/70 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-chalk mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-chalk/70 text-sm leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
+            </Reveal>
           ))}
 
           {/* CTA Card */}
-          <div className="p-6 rounded-2xl border border-amber/30 bg-gradient-to-br from-amber/5 to-transparent flex flex-col items-center justify-center text-center space-y-4">
-            <p className="text-chalk font-medium">Ready to build?</p>
-            <ButtonApple
-              href="#contact"
-              text="Let's Build Yours"
-              icon="🛠"
-              amber
-            />
-          </div>
+          <Reveal delay={features.length * 100}>
+            <div className="p-6 rounded-2xl border border-amber/30 bg-gradient-to-br from-amber/5 to-transparent flex flex-col items-center justify-center text-center space-y-4">
+              <p className="text-chalk font-medium">Ready to build?</p>
+              <ButtonApple
+                href="#contact"
+                text="Let's Build Yours"
+                icon="🛠"
+                amber
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
