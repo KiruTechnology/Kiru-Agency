@@ -70,13 +70,13 @@ const FAQSection: React.FC = () => {
                   className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-slate-dark/80 transition-colors group"
                 >
                   <div className="flex items-center gap-4 flex-1 min-w-0">
-                    <span className="text-2xl flex-shrink-0">{faq.icon}</span>
+                    <span className="text-2xl shrink-0">{faq.icon}</span>
                     <span className="font-semibold text-chalk group-hover:text-amber transition-colors">
                       {faq.question}
                     </span>
                   </div>
                   <span
-                    className={`text-chalk/70 flex-shrink-0 transition-transform duration-300 ${
+                    className={`text-chalk/70 shrink-0 transition-transform duration-300 ${
                       openIndex === idx ? "rotate-180" : ""
                     }`}
                   >

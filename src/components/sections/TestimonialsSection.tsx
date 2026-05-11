@@ -49,13 +49,13 @@ const TestimonialsSection: React.FC = () => {
 
   const handlePrev = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
+      prev === testimonials.length - 1 ? 0 : prev + 1,
     );
   };
 
@@ -70,8 +70,7 @@ const TestimonialsSection: React.FC = () => {
               <span>Client Stories</span>
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-chalk">
-              What Our{" "}
-              <span className="text-amber">Clients</span>
+              What Our <span className="text-amber">Clients</span>
               <br />
               Say
             </h2>
@@ -124,7 +123,7 @@ const TestimonialsSection: React.FC = () => {
                 {/* Author */}
                 <div className="flex items-center gap-4">
                   <div
-                    className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.bg} flex items-center justify-center font-bold text-chalk`}
+                    className={`w-12 h-12 rounded-full bg-linear-to-br ${testimonial.bg} flex items-center justify-center font-bold text-chalk`}
                   >
                     {testimonial.avatar}
                   </div>
@@ -139,7 +138,7 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* CTA Box */}
-        <div className="bg-gradient-to-r from-slate-dark/50 to-slate-dark/30 border border-amber/30 rounded-lg p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="bg-linear-to-r from-slate-dark/50 to-slate-dark/30 border border-amber/30 rounded-lg p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-start gap-4">
             <span className="text-3xl">🎯</span>
             <div>

@@ -66,7 +66,7 @@ const ProcessSection: React.FC = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-amber/50 to-slate-mid/30"></div>
+          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-linear-to-b from-amber/50 to-slate-mid/30"></div>
 
           {/* Steps Grid */}
           <div className="space-y-12 lg:space-y-16">

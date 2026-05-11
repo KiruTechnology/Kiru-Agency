@@ -18,7 +18,13 @@ const TeamSection: React.FC = () => {
       name: "Amina Mwangi",
       role: "Head of Design",
       bio: "Product designer with a background in UX research and systems thinking. She brings user empathy to every pixel, shipping interfaces that convert.",
-      expertise: ["Figma", "UX Research", "Design Systems", "Prototyping", "User Testing"],
+      expertise: [
+        "Figma",
+        "UX Research",
+        "Design Systems",
+        "Prototyping",
+        "User Testing",
+      ],
       stats: ["12+ yrs", "50+ projects", "Remote-first"],
       color: "from-purple-600 to-purple-700",
     },
@@ -36,7 +42,12 @@ const TeamSection: React.FC = () => {
       name: "Sarah Muthiga",
       role: "QA & Product",
       bio: "Detail-oriented engineer who ensures every feature works flawlessly. She bridges product and engineering, ensuring we ship with confidence.",
-      expertise: ["Automation Testing", "Manual QA", "Product Strategy", "Analytics"],
+      expertise: [
+        "Automation Testing",
+        "Manual QA",
+        "Product Strategy",
+        "Analytics",
+      ],
       stats: ["7+ yrs", "1000+ issues tracked", "100% satisfaction"],
       color: "from-pink-600 to-pink-700",
     },
@@ -73,11 +84,11 @@ const TeamSection: React.FC = () => {
             >
               {expandedMember === idx ? (
                 // Expanded View
-                <div className="p-8 rounded-lg bg-gradient-to-br from-slate-dark/80 to-slate-dark/40 border border-amber/30 space-y-6 animate-fadeIn">
+                <div className="p-8 rounded-lg bg-linear-to-br from-slate-dark/80 to-slate-dark/40 border border-amber/30 space-y-6 animate-fadeIn">
                   {/* Header */}
                   <div className="flex items-start gap-4">
                     <div
-                      className={`w-16 h-16 rounded-lg bg-gradient-to-br ${member.color} flex items-center justify-center font-bold text-chalk text-xl flex-shrink-0`}
+                      className={`w-16 h-16 rounded-lg bg-linear-to-br ${member.color} flex items-center justify-center font-bold text-chalk text-xl shrink-0`}
                     >
                       {member.num}
                     </div>
@@ -148,7 +159,7 @@ const TeamSection: React.FC = () => {
                 <div className="p-6 rounded-lg border border-slate-mid/30 bg-slate-dark/50 hover:border-amber/50 hover:bg-slate-dark/70 transition-all group">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`w-12 h-12 rounded-lg bg-gradient-to-br ${member.color} flex items-center justify-center font-bold text-chalk flex-shrink-0`}
+                      className={`w-12 h-12 rounded-lg bg-linear-to-br ${member.color} flex items-center justify-center font-bold text-chalk shrink-0`}
                     >
                       {member.num}
                     </div>
@@ -161,7 +172,7 @@ const TeamSection: React.FC = () => {
                       </h3>
                       <p className="text-chalk/70 text-sm">{member.role}</p>
                     </div>
-                    <span className="text-amber group-hover:translate-x-1 transition-transform flex-shrink-0">
+                    <span className="text-amber group-hover:translate-x-1 transition-transform shrink-0">
                       →
                     </span>
                   </div>

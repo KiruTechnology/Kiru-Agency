@@ -58,7 +58,7 @@ const WorkSection: React.FC = () => {
               {/* Card Thumbnail */}
               <div className="relative rounded-lg overflow-hidden mb-6 aspect-video">
                 <div
-                  className={`w-full h-full bg-gradient-to-br ${project.color} flex items-center justify-center p-8`}
+                  className={`w-full h-full bg-linear-to-br ${project.color} flex items-center justify-center p-8`}
                 >
                   <div className="text-center">
                     <div className="text-4xl font-bold text-amber/20 mb-4">
@@ -71,7 +71,7 @@ const WorkSection: React.FC = () => {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <p className="text-amber text-xs font-bold mb-2">
                     {project.category}
                   </p>

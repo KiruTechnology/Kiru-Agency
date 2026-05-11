@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -55,7 +55,7 @@ const ContactSection: React.FC = () => {
             <div className="space-y-6 pt-8">
               {/* Email */}
               <div className="flex gap-4">
-                <div className="text-2xl flex-shrink-0">✉</div>
+                <div className="text-2xl shrink-0">✉</div>
                 <div>
                   <p className="text-chalk/70 text-sm mb-1">Email</p>
                   <a
@@ -69,7 +69,7 @@ const ContactSection: React.FC = () => {
 
               {/* Phone */}
               <div className="flex gap-4">
-                <div className="text-2xl flex-shrink-0">📞</div>
+                <div className="text-2xl shrink-0">📞</div>
                 <div>
                   <p className="text-chalk/70 text-sm mb-1">Phone</p>
                   <a
@@ -83,7 +83,7 @@ const ContactSection: React.FC = () => {
 
               {/* Response */}
               <div className="flex gap-4">
-                <div className="text-2xl flex-shrink-0">⏰</div>
+                <div className="text-2xl shrink-0">⏰</div>
                 <div>
                   <p className="text-chalk/70 text-sm mb-1">Response</p>
                   <p className="text-chalk">Within 24 hours</p>
@@ -120,7 +120,7 @@ const ContactSection: React.FC = () => {
           {/* Right Panel - Form */}
           <div className="relative">
             {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full p-8 bg-gradient-to-br from-amber/10 to-slate/10 rounded-lg border border-amber/30">
+              <div className="flex flex-col items-center justify-center h-full p-8 bg-linear-to-br from-amber/10 to-slate/10 rounded-lg border border-amber/30">
                 <div className="text-5xl mb-4">✦</div>
                 <h3 className="text-2xl font-bold text-chalk mb-2">
                   We received your message!
@@ -198,7 +198,12 @@ const ContactSection: React.FC = () => {
                   </label>
                   <div className="space-y-3">
                     {[
-                      { value: "morning", icon: "☀", label: "Morning", time: "9AM - 12PM" },
+                      {
+                        value: "morning",
+                        icon: "☀",
+                        label: "Morning",
+                        time: "9AM - 12PM",
+                      },
                       {
                         value: "afternoon",
                         icon: "◐",

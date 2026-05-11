@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { ButtonApple, ButtonWithBar } from "../Buttons";
 
 const HeroSection: React.FC = () => {
@@ -70,7 +70,7 @@ const HeroSection: React.FC = () => {
 
           {/* Right Side - 3D Canvas */}
           <div className="hidden lg:flex items-center justify-center relative">
-            <div className="w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-slate-mid/20 to-slate/10 border border-slate-mid/30">
+            <div className="w-full h-96 rounded-2xl overflow-hidden bg-linear-to-br from-slate-mid/20 to-slate/10 border border-slate-mid/30">
               <canvas
                 ref={canvasRef}
                 id="heroCanvas"

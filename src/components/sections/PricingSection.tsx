@@ -76,7 +76,7 @@ const PricingSection: React.FC = () => {
               key={idx}
               className={`relative rounded-lg border transition-all duration-300 ${
                 plan.featured
-                  ? "border-amber/50 bg-gradient-to-br from-slate/40 to-slate-dark/60 scale-105 lg:scale-110 shadow-2xl"
+                  ? "border-amber/50 bg-linear-to-br from-slate/40 to-slate-dark/60 scale-105 lg:scale-110 shadow-2xl"
                   : "border-slate-mid/30 bg-slate/40 hover:border-amber/30"
               }`}
             >
@@ -116,7 +116,10 @@ const PricingSection: React.FC = () => {
                     </li>
                   ))}
                   {plan.excluded.map((feature, fidx) => (
-                    <li key={fidx} className="flex items-start gap-3 opacity-50">
+                    <li
+                      key={fidx}
+                      className="flex items-start gap-3 opacity-50"
+                    >
                       <span className="text-slate-mid mt-1">✗</span>
                       <span className="text-chalk/60 text-sm">{feature}</span>
                     </li>
