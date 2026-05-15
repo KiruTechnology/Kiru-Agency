@@ -19,9 +19,10 @@ export default {
         "muted-lt": "#a09890",
       },
       fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
         syne: ["Syne", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
-        "dm-mono": ["DM Mono", "monospace"],
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],

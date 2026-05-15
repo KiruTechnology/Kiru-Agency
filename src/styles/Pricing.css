@@ -1,0 +1,35 @@
+.pricing-section { background: var(--chalk); border-bottom: 1.5px solid var(--border); padding-bottom: 4.5rem; }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px; background: var(--border);
+  border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden;
+}
+.pricing-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.pricing-card--featured { background: var(--slate); }
+.pricing-card--featured .pricing-tier,
+.pricing-card--featured .pricing-amount,
+.pricing-card--featured .pricing-list li { color: var(--white); }
+.pricing-card--featured .pricing-tag { color: rgba(255,255,255,0.55); }
+.pricing-card--featured .pricing-list li.muted { color: rgba(255,255,255,0.3); }
+
+.pricing-badge {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: var(--amber); color: var(--slate);
+  font-size: 0.62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 0.3rem 0.7rem; border-radius: 999px;
+}
+.pricing-tier { font-family: var(--font-d); font-size: 1.4rem; font-weight: 800; color: var(--slate); letter-spacing: -0.02em; margin-bottom: 0.2rem; }
+.pricing-tag  { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.2rem; }
+.pricing-amount { font-size: 0.9rem; color: var(--slate); margin-bottom: 1.5rem; }
+.pricing-amount strong { font-size: 2rem; font-family: var(--font-d); font-weight: 800; letter-spacing: -0.03em; }
+.pricing-list { list-style: none; flex: 1; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.pricing-list li { font-size: 0.84rem; color: var(--slate); }
+.pricing-list li.muted { color: var(--muted-lt); }
+
+@media (max-width: 860px) { .pricing-grid { grid-template-columns: 1fr; } }

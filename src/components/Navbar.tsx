@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useScrollDetection } from "../hooks/useScrollDetection";
-import { ButtonApple } from "./Buttons";
+import { Button1 } from "./Buttons";
 
 const Navbar: React.FC = () => {
-  const { isHidden } = useScrollDetection(80, 8);
+  const { isHidden, isAtTop } = useScrollDetection(80, 8);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -16,8 +16,12 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-slate/95 backdrop-blur-md border-b border-slate-mid/30 transition-transform duration-320 ${
-        isHidden ? "translate-y-full" : "translate-y-0"
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-slate-mid/30 transition-all duration-300 ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      } ${
+        isAtTop
+          ? "bg-transparent"
+          : "bg-slate/85 backdrop-blur-xl border-slate-mid/50"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -45,10 +49,9 @@ const Navbar: React.FC = () => {
         </ul>
 
         {/* CTA Button */}
-        <ButtonApple
+        <Button1
           href="#contact"
           text="Start Project"
-          icon="✦"
           className="hidden md:inline-flex text-sm"
         />
 
