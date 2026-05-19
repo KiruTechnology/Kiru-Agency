@@ -4,11 +4,24 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate py-12 md:py-16">
+    <footer className="bg-slate py-16 md:py-20">
       <div className="footer-shell max-w-7xl mx-auto px-6">
-        <div className="footer-card bg-slate/80 border border-chalk/8 rounded-2xl p-8 md:p-10 shadow-2xl">
+        {/* CTA Section */}
+        <div className="footer-cta mb-16 md:mb-20 text-center pb-12 md:pb-16 border-b border-chalk/8">
+          <h2 className="text-3xl md:text-4xl font-bold text-chalk mb-3">
+            Ready to transform your data?
+          </h2>
+          <p className="text-chalk/60 text-sm md:text-base mb-6">
+            Join thousands of data-driven companies using our platform
+          </p>
+          <button className="bg-white text-slate px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-chalk transition-colors duration-200">
+            Start Now
+          </button>
+        </div>
+
+        <div className="footer-card">
           {/* Footer Top */}
-          <div className="footer-top grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 pb-8 md:pb-10 border-b border-chalk/8 mb-8 md:mb-6">
+          <div className="footer-top grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 pb-8 md:pb-10 mb-8 md:mb-6">
             {/* Brand Section */}
             <div className="footer-brand md:col-span-2 space-y-4">
               <div className="footer-logo-row flex items-center gap-2">
@@ -160,16 +173,27 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Footer Bottom */}
-          <div className="footer-bottom flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-chalk/40">
-            <span>© {currentYear} Kiru Tech. All rights reserved.</span>
-            <div className="footer-legal flex gap-4 md:gap-6">
-              <a href="#" className="hover:text-chalk transition-colors">
+          <div className="footer-bottom flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-6 border-t border-chalk/8">
+            <span className="text-xs text-chalk/40">
+              © {currentYear} Graphy. All rights reserved.
+            </span>
+            <div className="footer-legal flex gap-6">
+              <a
+                href="#"
+                className="text-xs text-chalk/40 hover:text-chalk transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-chalk transition-colors">
+              <a
+                href="#"
+                className="text-xs text-chalk/40 hover:text-chalk transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-chalk transition-colors">
+              <a
+                href="#"
+                className="text-xs text-chalk/40 hover:text-chalk transition-colors"
+              >
                 Cookie Settings
               </a>
             </div>
