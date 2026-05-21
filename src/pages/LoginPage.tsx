@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/kiru-styles.css";
 
-export default function LoginPage() {
+export function LoginPage() {
   useEffect(() => {
     document.title = "Sign In - Kiru Tech";
   }, []);

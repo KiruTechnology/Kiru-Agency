@@ -34,9 +34,9 @@ export function Footer() {
     <footer className="gh-footer">
       <div className="gh-footer-cta">
         <h2 className="gh-footer-cta-title">
-          Ready to Improve your Business Process?
+          Ready to Automate Your Business Process?
         </h2>
-        <p className="gh-footer-cta-sub">click the button below</p>
+        <p className="gh-footer-cta-sub">Click button below to Get Started.</p>
         <button className="gh-footer-cta-btn">Start Now</button>
       </div>
       <div className="gh-footer-inner">

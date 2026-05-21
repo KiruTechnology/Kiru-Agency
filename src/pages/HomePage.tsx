@@ -14,7 +14,7 @@ import {
 import FloatingCTA from "../components/FloatingCTA";
 import "../styles/kiru-styles.css";
 
-export default function HomePage() {
+export function HomePage() {
   return (
     <>
       <HeroWithDomeGallery />

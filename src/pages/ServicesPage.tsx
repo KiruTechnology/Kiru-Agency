@@ -7,7 +7,7 @@
 import { useEffect } from "react";
 import "../styles/kiru-styles.css";
 
-export default function ServicesPage() {
+export function ServicesPage() {
   useEffect(() => {
     document.title = "Services - Kiru Tech";
   }, []);

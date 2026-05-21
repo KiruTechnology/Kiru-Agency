@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/kiru-styles.css";
 
-export default function NotFoundPage() {
+export function NotFoundPage() {
   useEffect(() => {
     document.title = "Page Not Found - Kiru Tech";
   }, []);

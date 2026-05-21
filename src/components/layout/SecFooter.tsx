@@ -15,11 +15,14 @@ function SecFooter() {
           paddingBottom: "32px",
           borderBottom: "1px solid var(--border)",
           textAlign: "center",
-          fontSize: ".72rem",
+          fontSize: ".85rem",
           color: "var(--text-muted)",
         }}
       >
-        <p>© {currentYear} Kiru Tech. All rights reserved.</p>
+        <p>
+          © {currentYear} Kiru Tech. All rights reserved. | Contact Us at
+          hello@kirutech.io
+        </p>
       </div>
     </footer>
   );

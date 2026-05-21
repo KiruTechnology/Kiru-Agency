@@ -1,22 +1,17 @@
-import {
-  HashRouter,
-  Routes,
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
-import KiruTech from "./components/KIRUMAIN";
-import TermsOfService from "./pages/TermsOfService";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import RootLayout from "./layouts/RootLayout";
-import HomePage from "./pages/HomePage";
-import ServicesPage from "./pages/ServicesPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./styles/kiru-styles.css";
 import { SecurityLayout } from "./layouts/SecurityLayout";
+import RootLayout from "./layouts/RootLayout";
+import {
+  HomePage,
+  LoginPage,
+  NotFoundPage,
+  PrivacyPolicy,
+  ProjectsPage,
+  ServicesPage,
+  SignupPage,
+  TermsOfService,
+} from "./pages";
 
 function App() {
   const kiruRouter = createBrowserRouter([
@@ -32,14 +27,14 @@ function App() {
 
     // other pages
     {
-      path: "/sec",
+      path: "/",
       element: <SecurityLayout />,
       children: [
-        { index: true, element: <TermsOfService /> },
+        { index: true, path: "terms", element: <TermsOfService /> },
         { path: "privacy", element: <PrivacyPolicy /> },
         // Auth routes
-        { path: "/login", element: <LoginPage /> },
-        { path: "/singup", element: <SignupPage /> },
+        { path: "login", element: <LoginPage /> },
+        { path: "signup", element: <SignupPage /> },
       ],
     },
 

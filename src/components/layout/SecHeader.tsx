@@ -1,10 +1,9 @@
-import "../../styles/privacy.css";
+import "../../styles/other.css";
 function SecHeader() {
   return (
     <nav
-      className="px-10 border border-red-500 sticky p-8"
       style={{
-        padding: "1rem",
+        position: "fixed",
         top: 0,
         left: 0,
         right: 0,
@@ -14,14 +13,25 @@ function SecHeader() {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <div className="w-[99dvw] mx-auto my-0 h-full flex justify-between items-center">
+      <div
+        style={{
+          maxWidth: "var(--max)",
+          margin: "0 auto",
+          height: "100%",
+          padding: "0 40px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <a
           href="/"
           style={{
+            fontSize: ".9rem",
+            fontWeight: 800,
             color: "var(--text-primary)",
             textDecoration: "none",
           }}
-          className="font-[.9rem] font-bold"
         >
           Kiru Tech
         </a>

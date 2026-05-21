@@ -7,6 +7,14 @@ import {
   //   type ReactNode,
 } from "react";
 import "../styles/kiru-styles.css";
+import {
+  IconClock,
+  IconEmail,
+  IconLi,
+  IconGh,
+  IconPhone,
+  IconX,
+} from "./icons/ContactIcons";
 
 /* SCROLL REVEAL HOOK */
 function useReveal() {
@@ -1497,7 +1505,6 @@ export default function KiruTech() {
         <Contact />
         <Team />
       </main>
-      <Footer />
       <FloatingCTA />
     </>
   );
