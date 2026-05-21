@@ -11,55 +11,11 @@ export default function PrivacyPolicy() {
   return (
     <>
       <style>{`
-        body { font-family: var(--font); background: var(--bg); color: var(--text-primary); }
-        :root {
-          --bg: #0d1117;
-          --surface: #161b22;
-          --surface-2: #21262d;
-          --border: #30363d;
-          --text-primary: #e6edf3;
-          --text-secondary: #8b949e;
-          --text-muted: #656d76;
-          --blue: #58a6ff;
-          --max: 1280px;
+
         }
       `}</style>
 
       <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
-        {/* Navigation */}
-        <nav
-          className="px-10 border border-red-500 sticky p-8"
-          style={{
-            padding: "1rem",
-            top: 0,
-            left: 0,
-            right: 0,
-            zIndex: 200,
-            height: "64px",
-            background: "rgba(13,17,23,.85)",
-            borderBottom: "1px solid var(--border)",
-          }}
-        >
-          <div className="w-[99dvw] mx-auto my-0 h-full flex justify-between items-center">
-            <a
-              href="/"
-              style={{
-                color: "var(--text-primary)",
-                textDecoration: "none",
-              }}
-              className="font-[.9rem] font-bold"
-            >
-              Kiru Tech
-            </a>
-            <a
-              href="/"
-              style={{ color: "var(--text-secondary)", textDecoration: "none" }}
-            >
-              Back to Home
-            </a>
-          </div>
-        </nav>
-
         {/* Main Content */}
         <main style={{ paddingTop: "64px", paddingBottom: "60px" }}>
           <div
@@ -255,29 +211,6 @@ export default function PrivacyPolicy() {
             </div>
           </div>
         </main>
-
-        {/* Footer */}
-        <footer
-          style={{
-            borderTop: "1px solid var(--border)",
-            padding: "48px 40px 32px",
-            background: "#010409",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "var(--max)",
-              margin: "0 auto",
-              paddingBottom: "32px",
-              borderBottom: "1px solid var(--border)",
-              textAlign: "center",
-              fontSize: ".72rem",
-              color: "var(--text-muted)",
-            }}
-          >
-            <p>© {currentYear} Kiru Tech. All rights reserved.</p>
-          </div>
-        </footer>
       </div>
     </>
   );

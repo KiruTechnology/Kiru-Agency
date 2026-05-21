@@ -1,11 +1,3 @@
-/**
- * pages/HomePage.tsx
- *
- * Main landing page featuring:
- * - HeroWithDomeGallery (hero + dome gallery with scroll animation)
- * - All major sections extracted from KIRUMAIN
- */
-
 import { HeroWithDomeGallery } from "../components/HeroWithDomeGallery";
 import {
   StatsStrip,

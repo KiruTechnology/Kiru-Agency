@@ -1,5 +1,4 @@
-import React from "react";
-
+import "../../styles/kiru-styles.css";
 export function Features() {
   const feats = [
     {

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function StatsStrip() {
   const stats = [
     { num: "10+", label: "Products Built" },
@@ -7,7 +5,6 @@ export function StatsStrip() {
     { num: "∞", label: "Scalable Architectures" },
     { num: "99%", label: "Client Satisfaction" },
   ];
-
   return (
     <div className="gh-stats">
       <div className="gh-stats-inner stagger">
