@@ -6,16 +6,16 @@ export function Footer() {
     {
       head: "Company",
       links: [
-        ["Why Kiru", "#features"],
-        ["Team", "#team"],
-        ["Projects", "#work"],
-        ["Stories", "#testimonials"],
+        ["Why Kiru", "/#features"],
+        ["Team", "/#team"],
+        ["Projects", "/#work"],
+        ["Stories", "/#testimonials"],
       ],
     },
     {
       head: "Services",
       links: [
-        ["Web Apps", "#services"],
+        ["Web Apps", "services"],
         ["Mobile Apps", "#services"],
         ["UI/UX Design", "#services"],
         ["Backend & APIs", "#services"],
@@ -42,7 +42,11 @@ export function Footer() {
       <div className="gh-footer-inner">
         <div className="gh-footer-brand">
           <div className="gh-footer-logo">
-            {/* <img src="/assets/kiru.png" alt="Kiru Tech" className="gh-footer-logo-img" /> */}
+            <img
+              src="../../assets/kiru.png"
+              alt="Kiru Tech"
+              className="gh-footer-logo-img"
+            />
             <span className="gh-footer-logo-text">Kiru Tech</span>
           </div>
           <p className="gh-footer-tagline">
@@ -67,7 +71,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="gh-footer-bottom pb-6">
+      <div className="gh-footer-bottom pb-6!">
         <span>
           © {new Date().getFullYear()} Kiru Tech. All rights reserved.
         </span>

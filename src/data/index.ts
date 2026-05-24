@@ -1,3 +1,4 @@
+// service terms Data
 export const ServiceTerms = [
   {
     title: "Acceptance of Terms",
@@ -41,19 +42,7 @@ export const ServiceTerms = [
   },
 ];
 
-// type item = {
-//     cat?: string
-//     info: string
-// }
-// type other = {
-//     title: string
-//     items: item[]
-// }
-// type Pol = {
-//     title: string
-//     content: string
-//     other?: other[]
-// }
+// Privacy policy Data
 export const Policy = [
   {
     title: "Introduction",
@@ -86,13 +75,6 @@ export const Policy = [
         ],
       },
     ],
-
-    //   <ul >
-    //
-    //     <li>
-    //       <strong>:</strong>
-    //     </li>
-    //   </ul>`,
   },
   {
     title: "Use of Data",
@@ -146,5 +128,69 @@ export const Policy = [
     content: `You have the right to access, update, or delete the information we have on you.
        If you would like to exercise this right, please contact us using the information
         in the Contact Us section above.`,
+  },
+];
+
+// Teams section - team members data
+export const team = [
+  {
+    initials: "KW",
+    from: "#1a3a5c",
+    to: "#0d1117",
+    num: "01",
+    name: "Kiru Wanjiku",
+    role: "Founder & Lead Engineer",
+    bio: "Full-stack architect with 8+ years shipping products for startups and enterprises across Africa and Europe. Obsessed with clean systems and fast delivery.",
+    tags: [
+      ["Go", "React", "PostgreSQL"],
+      ["AWS", "Docker", "Redis"],
+    ],
+    stats: ["8+ yrs", "20+ products", "3 continents"],
+    socials: ["tw", "li", "gh"],
+  },
+  {
+    initials: "AM",
+    from: "#6b3fa0",
+    to: "#2d1b4e",
+    num: "02",
+    name: "Amina Mwangi",
+    role: "Head of Design",
+    bio: "Product designer obsessed with user research and turning complex flows into elegant, intuitive experiences that users genuinely love returning to.",
+    tags: [
+      ["Figma", "Framer", "Research"],
+      ["Motion", "Design Systems"],
+    ],
+    stats: ["5+ yrs", "30+ screens", "4.9★ avg"],
+    socials: ["tw", "li", "dr"],
+  },
+  {
+    initials: "DO",
+    from: "#1a6640",
+    to: "#0f2a1a",
+    num: "03",
+    name: "David Omondi",
+    role: "Backend Engineer",
+    bio: "Systems thinker and API architect. Specialized in high-throughput distributed systems, cloud infrastructure, and making things not fall over at 3am.",
+    tags: [
+      ["Rust", "Kafka", "Kubernetes"],
+      ["GCP", "GraphQL", "gRPC"],
+    ],
+    stats: ["6+ yrs", "99.99% uptime", "10M+ req/day"],
+    socials: ["tw", "li", "gh"],
+  },
+  {
+    initials: "BN",
+    from: "#b85c20",
+    to: "#3a2010",
+    num: "04",
+    name: "Brenda Njoki",
+    role: "Mobile Engineer",
+    bio: "React Native and Flutter specialist. Ships mobile apps that feel truly native, perform brilliantly on any device, and users keep choosing over the competition.",
+    tags: [
+      ["React Native", "Flutter"],
+      ["Swift", "Kotlin", "Firebase"],
+    ],
+    stats: ["5+ yrs", "4.9★ apps", "50k+ DLs"],
+    socials: ["tw", "li", "gh"],
   },
 ];

@@ -16,7 +16,11 @@ export function Navbar() {
       <nav className={`gh-nav${scrolled ? " scrolled" : ""}`}>
         <div className="gh-nav-inner">
           <a href="#" className="gh-logo">
-            {/* <img src="/assets/kiru.png" alt="Kiru Tech" className="gh-logo-img" /> */}
+            <img
+              src="../assets/kiru.png"
+              alt="Kiru Tech"
+              className="gh-logo-img"
+            />
             <span className="gh-logo-text">Kiru Tech</span>
           </a>
           <ul className="gh-nav-links">

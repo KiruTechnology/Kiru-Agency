@@ -13,3 +13,4 @@ export { Pricing } from "./Pricing";
 export { FAQ } from "./FAQ";
 export { Contact } from "./Contact";
 export { Team } from "./Team";
+export { FloatingCTA } from "./FloatingButton";
