@@ -173,6 +173,7 @@ export function Navbar() {
     {
       label: "Rights & Terms",
       type: "dropdown",
+      link: "/terms",
       columns: [
         {
           title: "Legal",
@@ -473,7 +474,7 @@ export function Navbar() {
           {navItems.map((l) => (
             <li key={l.label}>
               <a
-                href={l.link || `#${l.label.toLowerCase()}`}
+                href={l.link || `/#${l.label.toLowerCase()}`}
                 onClick={() => setDrawer(false)}
               >
                 {l.label}
@@ -482,7 +483,7 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="#contact"
+              href="/#contact"
               className="drawer-cta"
               onClick={() => setDrawer(false)}
             >

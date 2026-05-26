@@ -525,7 +525,7 @@ export function ServicesPage() {
           <div className="sp-inner">
             <div className="sp-reveal">
               <div className="sp-overline">What We Build</div>
-              <h2 className="sp-section-title">Six Core Services</h2>
+              <h2 className="sp-section-title">Eight Core Services</h2>
               <p className="sp-section-sub">
                 Each service is a standalone offering — or combine them for
                 end-to-end product delivery.

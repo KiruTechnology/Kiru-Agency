@@ -841,6 +841,7 @@ body {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  place-self: center;
 }
 
 .gh-hero-social-proof {
