@@ -1,4 +1,5 @@
 import { IconX, IconGh, IconLi } from "../icons/ContactIcons";
+import kiruLogo from "../../assets/kiru.png";
 
 /* MAIN LAYOUT FOOTER */
 export function Footer() {
@@ -43,7 +44,7 @@ export function Footer() {
         <div className="gh-footer-brand">
           <div className="gh-footer-logo">
             <img
-              src="../../assets/kiru.png"
+              src={kiruLogo}
               alt="Kiru Tech"
               className="gh-footer-logo-img"
             />
