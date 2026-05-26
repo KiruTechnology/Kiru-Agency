@@ -138,7 +138,7 @@ export function Navbar() {
             type: "dropdown",
             columns: [
               {
-                title: "Homepage Sections",
+                title: "Navigation",
                 items: [
                   { icon: ListBulletIcon, label: "Process", link: "#process" },
                   {
@@ -146,12 +146,22 @@ export function Navbar() {
                     label: "Pricing",
                     link: "#pricing",
                   },
+                ],
+              },
+              {
+                title: "Community",
+                items: [
                   { icon: UserGroupIcon, label: "Team", link: "#team" },
                   {
                     icon: StarIcon,
                     label: "Testimonials",
                     link: "#testimonials",
                   },
+                ],
+              },
+              {
+                title: "Support",
+                items: [
                   { icon: QuestionMarkCircleIcon, label: "FAQ", link: "#faq" },
                   { icon: EnvelopeIcon, label: "Contact", link: "#contact" },
                 ],
@@ -182,8 +192,6 @@ export function Navbar() {
       ],
     },
   ];
-
-  const mainNavLinks = ["Services", "Work", "Go to", "Rights & Terms"];
 
   return (
     <>
@@ -274,13 +282,13 @@ export function Navbar() {
 
         .gh-dropdown-item {
           display: flex;
+          flex-direction: row;
+          align-items: flex-start;
           gap: 12px;
           padding: 10px 0;
           text-decoration: none;
           color: #24292f;
           transition: color 0.2s;
-          align-items: flex-start;
-          flex-direction: row;
         }
 
         .gh-dropdown-item:hover {
@@ -289,9 +297,8 @@ export function Navbar() {
 
         .gh-dropdown-item-icon {
           flex-shrink: 0;
-          order: -1;
-          min-width: 20px;
-          min-height: 20px;
+          width: 20px;
+          height: 20px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -306,6 +313,7 @@ export function Navbar() {
           display: flex;
           flex-direction: column;
           gap: 3px;
+          flex: 1;
         }
 
         .gh-dropdown-item-label {
@@ -325,7 +333,8 @@ export function Navbar() {
         }
 
         .gh-dropdown-item:hover .gh-dropdown-item-desc {
-          color: #24292f;
+          color: #424a51;
+          font-weight: 500;
         }
 
         .gh-dropdown-tags {
@@ -390,41 +399,46 @@ export function Navbar() {
                           <div className="gh-dropdown-column-title">
                             {column.title}
                           </div>
-                          {column.items?.map((subitem, sidx) => (
-                            <a
-                              key={sidx}
-                              href={subitem.link || item.link}
-                              className="gh-dropdown-item"
-                            >
-                              {subitem.icon && (
-                                <span className="gh-dropdown-item-icon">
-                                  <subitem.icon className="w-5 h-5" />
-                                </span>
-                              )}
-                              <div className="gh-dropdown-item-content">
-                                <span className="gh-dropdown-item-label">
-                                  {subitem.label}
-                                </span>
-                                {subitem.desc && (
-                                  <span className="gh-dropdown-item-desc">
-                                    {subitem.desc}
+                          {column.items?.map((subitem, sidx) => {
+                            const ItemIcon = (subitem as any).icon;
+                            return (
+                              <a
+                                key={sidx}
+                                href={(subitem as any).link ?? item.link}
+                                className="gh-dropdown-item"
+                              >
+                                {ItemIcon && (
+                                  <span className="gh-dropdown-item-icon">
+                                    <ItemIcon className="w-5 h-5" />
                                   </span>
                                 )}
-                                {subitem.tags && (
-                                  <div className="gh-dropdown-tags">
-                                    {subitem.tags.map((tag) => (
-                                      <span
-                                        key={tag}
-                                        className="gh-dropdown-tag"
-                                      >
-                                        {tag}
-                                      </span>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            </a>
-                          ))}
+                                <div className="gh-dropdown-item-content">
+                                  <span className="gh-dropdown-item-label">
+                                    {subitem.label}
+                                  </span>
+                                  {(subitem as any).desc && (
+                                    <span className="gh-dropdown-item-desc">
+                                      {(subitem as any).desc}
+                                    </span>
+                                  )}
+                                  {(subitem as any).tags && (
+                                    <div className="gh-dropdown-tags">
+                                      {(subitem as any).tags.map(
+                                        (tag: string) => (
+                                          <span
+                                            key={tag}
+                                            className="gh-dropdown-tag"
+                                          >
+                                            {tag}
+                                          </span>
+                                        ),
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              </a>
+                            );
+                          })}
                         </div>
                       ))}
                     </div>

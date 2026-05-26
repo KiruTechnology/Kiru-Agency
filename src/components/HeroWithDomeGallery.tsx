@@ -192,7 +192,7 @@ export function HeroWithDomeGallery() {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: "30% top", // dome starts rising at 30% scroll
+            start: "0% top", // dome starts rising immediately with hero fade
             end: "bottom top", // fully covers hero by the time wrapper ends
             scrub: 1,
           },
@@ -279,13 +279,15 @@ export function HeroWithDomeGallery() {
               inset: 0,
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               maxWidth: "var(--max)",
               margin: "0 auto",
               padding: "0 40px",
               paddingTop: "64px", // navbar height
+              width: "100%",
             }}
           >
-            <div style={{ maxWidth: 640 }}>
+            <div style={{ maxWidth: 640, textAlign: "center" }}>
               {/* Eyebrow */}
               <div className="gh-eyebrow" style={{ marginBottom: 24 }}>
                 <div className="gh-eyebrow-dot" />
@@ -378,6 +380,8 @@ export function HeroWithDomeGallery() {
             right: 0,
             minHeight: "100vh",
             background: "var(--bg)",
+            backgroundImage:
+              "radial-gradient(circle at 20% 50%, rgba(88, 166, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(175, 113, 247, 0.03) 0%, transparent 50%)",
             zIndex: 2,
             clipPath: "inset(100% 0% 0% 0% round 24px 24px 0 0)", // starts hidden
             willChange: "clip-path",
