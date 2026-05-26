@@ -1,231 +1,33 @@
-/**
- * pages/ServicesPage.tsx
- *
- * Dedicated services page with services overview and process
- */
-
-// import { useEffect } from "react";
-// import "../styles/kiru-styles.css";
-
-// export function ServicesPage() {
-//   useEffect(() => {
-//     document.title = "Services - Kiru Tech";
-//   }, []);
-
-//   const services = [
-//     {
-//       title: "Custom Software Development",
-//       description:
-//         "From MVP to full-scale product. We design, build, and ship software that scales.",
-//       icon: "💻",
-//     },
-//     {
-//       title: "Product Design & UX",
-//       description:
-//         "Beautiful, intuitive interfaces that users love. We design for impact.",
-//       icon: "🎨",
-//     },
-//     {
-//       title: "Mobile App Development",
-//       description:
-//         "iOS and Android apps built with React Native and native technologies.",
-//       icon: "📱",
-//     },
-//     {
-//       title: "Cloud Architecture",
-//       description:
-//         "Scalable, secure infrastructure on AWS, GCP, or your platform of choice.",
-//       icon: "☁️",
-//     },
-//     {
-//       title: "DevOps & Infrastructure",
-//       description:
-//         "CI/CD pipelines, containerization, monitoring, and infrastructure automation.",
-//       icon: "⚙️",
-//     },
-//     {
-//       title: "Team Augmentation",
-//       description:
-//         "Experienced engineers who integrate seamlessly into your team.",
-//       icon: "👥",
-//     },
-//   ];
-
-//   return (
-//     <div style={{ background: "var(--bg)", color: "var(--text-primary)" }}>
-//       {/* Hero section */}
-//       <section
-//         style={{
-//           minHeight: "60vh",
-//           display: "flex",
-//           alignItems: "center",
-//           justifyContent: "center",
-//           padding: "120px 40px 80px",
-//           textAlign: "center",
-//           borderBottom: "1px solid var(--border)",
-//         }}
-//       >
-//         <div style={{ maxWidth: 800 }}>
-//           <div
-//             style={{
-//               fontSize: ".75rem",
-//               fontWeight: 700,
-//               letterSpacing: ".1em",
-//               textTransform: "uppercase",
-//               color: "var(--blue)",
-//               marginBottom: 16,
-//             }}
-//           >
-//             ✦ Our Services
-//           </div>
-//           <h1
-//             style={{
-//               fontSize: "3rem",
-//               fontWeight: 700,
-//               lineHeight: 1.2,
-//               marginBottom: 24,
-//             }}
-//           >
-//             We Build Software
-//             <br />
-//             <span style={{ color: "var(--blue)" }}>That Scales</span>
-//           </h1>
-//           <p
-//             style={{
-//               fontSize: "1.1rem",
-//               color: "var(--text-secondary)",
-//               lineHeight: 1.6,
-//             }}
-//           >
-//             From initial concept to production-ready systems, we provide
-//             end-to-end product engineering services.
-//           </p>
-//         </div>
-//       </section>
-
-//       {/* Services grid */}
-//       <section
-//         style={{
-//           maxWidth: "var(--max)",
-//           margin: "0 auto",
-//           padding: "80px 40px",
-//           display: "grid",
-//           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-//           gap: 32,
-//         }}
-//       >
-//         {services.map((s, i) => (
-//           <div
-//             key={i}
-//             style={{
-//               padding: 32,
-//               background: "var(--surface)",
-//               border: "1px solid var(--border)",
-//               borderRadius: "var(--radius)",
-//               transition: "all .3s",
-//             }}
-//             onMouseEnter={(e) => {
-//               e.currentTarget.style.background = "var(--surface-2)";
-//               e.currentTarget.style.borderColor = "var(--blue)";
-//             }}
-//             onMouseLeave={(e) => {
-//               e.currentTarget.style.background = "var(--surface)";
-//               e.currentTarget.style.borderColor = "var(--border)";
-//             }}
-//           >
-//             <div
-//               style={{
-//                 fontSize: "2rem",
-//                 marginBottom: 16,
-//               }}
-//             >
-//               {s.icon}
-//             </div>
-//             <h3
-//               style={{
-//                 fontSize: "1.1rem",
-//                 fontWeight: 600,
-//                 marginBottom: 12,
-//               }}
-//             >
-//               {s.title}
-//             </h3>
-//             <p
-//               style={{
-//                 fontSize: ".9rem",
-//                 color: "var(--text-secondary)",
-//                 lineHeight: 1.6,
-//               }}
-//             >
-//               {s.description}
-//             </p>
-//           </div>
-//         ))}
-//       </section>
-
-//       {/* CTA */}
-//       <section
-//         style={{
-//           maxWidth: "var(--max)",
-//           margin: "0 auto",
-//           padding: "80px 40px",
-//           textAlign: "center",
-//           borderTop: "1px solid var(--border)",
-//         }}
-//       >
-//         <h2
-//           style={{
-//             fontSize: "2rem",
-//             fontWeight: 700,
-//             marginBottom: 24,
-//           }}
-//         >
-//           Ready to build something great?
-//         </h2>
-//         <p
-//           style={{
-//             fontSize: "1rem",
-//             color: "var(--text-secondary)",
-//             marginBottom: 32,
-//           }}
-//         >
-//           Let&apos;s talk about your project and how we can help.
-//         </p>
-//         <a
-//           href="/#contact"
-//           style={{
-//             display: "inline-flex",
-//             alignItems: "center",
-//             padding: "12px 32px",
-//             background: "var(--green)",
-//             color: "#fff",
-//             textDecoration: "none",
-//             borderRadius: "var(--radius)",
-//             fontWeight: 600,
-//             transition: "background .2s",
-//           }}
-//           onMouseEnter={(e) =>
-//             (e.currentTarget.style.background = "var(--green-dim)")
-//           }
-//           onMouseLeave={(e) =>
-//             (e.currentTarget.style.background = "var(--green)")
-//           }
-//         >
-//           Start Your Project →
-//         </a>
-//       </section>
-//     </div>
-//   );
-// }
-
-/**
- * pages/ServicesPage.tsx
- * Rendered inside RootLayout (has navbar + footer)
- */
-
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import {
+  GlobeAltIcon,
+  DevicePhoneMobileIcon,
+  PaintBrushIcon,
+  Cog6ToothIcon,
+  RocketLaunchIcon,
+  BuildingLibraryIcon,
+  MagnifyingGlassIcon,
+  ClipboardDocumentIcon,
+  SparklesIcon,
+  ArrowTrendingUpIcon,
+  HandRaisedIcon,
+} from "@heroicons/react/24/solid";
+import {
+  DiReact,
+  DiGo,
+  DiRust,
+  DiPostgresql,
+  DiRedis,
+  DiDocker,
+} from "react-icons/di";
+import {
+  SiTypescript,
+  SiKubernetes,
+  SiAew,
+  SiVercel,
+  SiFigma,
+} from "react-icons/si";
 /* ── scroll reveal hook ── */
 function useReveal() {
   useEffect(() => {
@@ -461,7 +263,41 @@ const STYLES = `
 const services = [
   {
     num: "01",
-    icon: "🌐",
+    icon: SparklesIcon,
+    name: "AI Automation & AI Agents",
+    desc: "Custom AI agents and automation workflows that integrate with your systems. From document processing to intelligent task automation — we build AI that works for your business.",
+    tags: [
+      "OpenAI",
+      "Claude",
+      "LangChain",
+      "Automation",
+      "Integration",
+      "Custom Agents",
+    ],
+    timeline: "3–10 weeks",
+    price: "From $8k",
+    delivery: "Functional agents",
+  },
+  {
+    num: "02",
+    icon: SparklesIcon,
+    name: "AI Chatbots & Conversational AI",
+    desc: "Intelligent chatbots trained on your data. Whether customer support, internal knowledge assistants, or specialized domain experts — we build AI conversational interfaces that understand context.",
+    tags: [
+      "OpenAI",
+      "LangChain",
+      "Vector DB",
+      "RAG",
+      "Integration",
+      "Fine-tuning",
+    ],
+    timeline: "2–8 weeks",
+    price: "From $6k",
+    delivery: "Live chatbot",
+  },
+  {
+    num: "03",
+    icon: GlobeAltIcon,
     name: "Web Application Development",
     desc: "We build fast, accessible, production-ready full-stack web applications. From complex SaaS platforms to internal tools — we architect for the long run, not just the deadline.",
     tags: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Redis"],
@@ -470,8 +306,8 @@ const services = [
     delivery: "Weekly demos",
   },
   {
-    num: "02",
-    icon: "📱",
+    num: "04",
+    icon: DevicePhoneMobileIcon,
     name: "Mobile App Development",
     desc: "Cross-platform and native mobile apps that feel genuinely native, perform brilliantly on any device, and get shipped to the App Store and Play Store — end to end.",
     tags: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Expo"],
@@ -480,8 +316,8 @@ const services = [
     delivery: "TestFlight builds",
   },
   {
-    num: "03",
-    icon: "🎨",
+    num: "05",
+    icon: PaintBrushIcon,
     name: "UI/UX Design",
     desc: "Research-driven product design. We run discovery workshops, create wireframes, design systems, and high-fidelity prototypes — all before a single line of code is written.",
     tags: ["Figma", "Framer", "User Research", "Prototyping", "Design Systems"],
@@ -490,8 +326,8 @@ const services = [
     delivery: "Interactive Figma",
   },
   {
-    num: "04",
-    icon: "⚙️",
+    num: "06",
+    icon: Cog6ToothIcon,
     name: "Backend & API Development",
     desc: "Robust, well-documented REST and GraphQL APIs. Microservice architectures, event-driven systems, and cloud infrastructure designed for reliability at any scale.",
     tags: ["Go", "Rust", "Node.js", "GraphQL", "gRPC", "Kafka", "Kubernetes"],
@@ -500,8 +336,8 @@ const services = [
     delivery: "API docs + tests",
   },
   {
-    num: "05",
-    icon: "🚀",
+    num: "07",
+    icon: RocketLaunchIcon,
     name: "MVP Development",
     desc: "Validate your idea fast. We scope, design, and ship lean, polished MVPs in 4–8 weeks. Built to be extended — not thrown away. Our MVPs have raised seed rounds and found product-market fit.",
     tags: ["React", "Node.js", "Supabase", "Vercel", "Stripe", "Auth"],
@@ -510,8 +346,8 @@ const services = [
     delivery: "Live deployment",
   },
   {
-    num: "06",
-    icon: "🏗️",
+    num: "08",
+    icon: BuildingLibraryIcon,
     name: "System Architecture & Consulting",
     desc: "Struggling with a legacy system? Planning a migration? We design scalable architectures, review existing codebases, and give you a clear technical roadmap with no fluff.",
     tags: [
@@ -530,55 +366,127 @@ const services = [
 const process = [
   {
     num: "01",
-    icon: "🔍",
+    icon: MagnifyingGlassIcon,
     title: "Discovery Call",
     desc: "We dig into your goals, users, and constraints. 60 minutes — free, no commitment.",
   },
   {
     num: "02",
-    icon: "📋",
+    icon: ClipboardDocumentIcon,
     title: "Scoped Proposal",
     desc: "Detailed project scope, timeline, milestones, and fixed price. No hourly guesswork.",
   },
   {
     num: "03",
-    icon: "🏃",
+    icon: SparklesIcon,
     title: "Sprint Delivery",
     desc: "Weekly demos, open roadmap, and direct Slack access to your team throughout.",
   },
   {
     num: "04",
-    icon: "🚀",
+    icon: RocketLaunchIcon,
     title: "Launch + Support",
     desc: "We handle deployment, go-live support, and a 30-day post-launch window.",
   },
   {
     num: "05",
-    icon: "📈",
+    icon: ArrowTrendingUpIcon,
     title: "Scale Together",
     desc: "Ongoing retainers for continuous engineering — grow with us past your MVP.",
   },
   {
     num: "06",
-    icon: "🤝",
+    icon: HandRaisedIcon,
     title: "Long-term Partner",
     desc: "Many clients start with a project and evolve into a full engineering partnership.",
   },
 ];
 
 const stack = [
-  { icon: "⚛️", name: "React", cat: "Frontend" },
-  { icon: "🔷", name: "TypeScript", cat: "Language" },
-  { icon: "🐹", name: "Go", cat: "Backend" },
-  { icon: "🦀", name: "Rust", cat: "Backend" },
-  { icon: "🗄️", name: "PostgreSQL", cat: "Database" },
-  { icon: "⚡", name: "Redis", cat: "Cache" },
-  { icon: "🐳", name: "Docker", cat: "DevOps" },
-  { icon: "☸️", name: "Kubernetes", cat: "DevOps" },
-  { icon: "☁️", name: "AWS", cat: "Cloud" },
-  { icon: "🔺", name: "Vercel", cat: "Deploy" },
-  { icon: "🎨", name: "Figma", cat: "Design" },
-  { icon: "📱", name: "React Native", cat: "Mobile" },
+  {
+    icon: DiReact,
+    name: "React",
+    cat: "Frontend",
+    isComponent: true,
+    color: "#61DAFB",
+  },
+  {
+    icon: SiTypescript,
+    name: "TypeScript",
+    cat: "Language",
+    isComponent: true,
+    color: "#3178C6",
+  },
+  {
+    icon: DiGo,
+    name: "Go",
+    cat: "Backend",
+    isComponent: true,
+    color: "#00ADD8",
+  },
+  {
+    icon: DiRust,
+    name: "Rust",
+    cat: "Backend",
+    isComponent: true,
+    color: "#CE422B",
+  },
+  {
+    icon: DiPostgresql,
+    name: "PostgreSQL",
+    cat: "Database",
+    isComponent: true,
+    color: "#336791",
+  },
+  {
+    icon: DiRedis,
+    name: "Redis",
+    cat: "Cache",
+    isComponent: true,
+    color: "#DC382D",
+  },
+  {
+    icon: DiDocker,
+    name: "Docker",
+    cat: "DevOps",
+    isComponent: true,
+    color: "#2496ED",
+  },
+  {
+    icon: SiKubernetes,
+    name: "Kubernetes",
+    cat: "DevOps",
+    isComponent: true,
+    color: "#326CE5",
+  },
+  {
+    icon: SiAew,
+    name: "AWS",
+    cat: "Cloud",
+    isComponent: true,
+    color: "#FF9900",
+  },
+  {
+    icon: SiVercel,
+    name: "Vercel",
+    cat: "Deploy",
+    isComponent: true,
+    color: "#000000",
+  },
+  {
+    icon: SiFigma,
+    name: "Figma",
+    cat: "Design",
+    isComponent: true,
+    color: "#F24E1E",
+  },
+  {
+    icon: DevicePhoneMobileIcon,
+    name: "React Native",
+    cat: "Mobile",
+    isComponent: true,
+    color: "#61DAFB",
+  },
 ];
 
 export function ServicesPage() {
@@ -633,7 +541,9 @@ export function ServicesPage() {
                 >
                   <div className="sp-svc-num-col">{s.num}</div>
                   <div className="sp-svc-body">
-                    <span className="sp-svc-icon">{s.icon}</span>
+                    <span className="sp-svc-icon">
+                      <s.icon className="w-6 h-6" />
+                    </span>
                     <h3 className="sp-svc-name">{s.name}</h3>
                     <p className="sp-svc-desc">{s.desc}</p>
                     <div className="sp-svc-tags">
@@ -684,7 +594,9 @@ export function ServicesPage() {
                   style={{ transitionDelay: `${i * 60}ms` }}
                 >
                   <span className="sp-process-num">{p.num}</span>
-                  <span className="sp-process-icon">{p.icon}</span>
+                  <span className="sp-process-icon">
+                    <p.icon className="w-5 h-5" />
+                  </span>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
                 </div>
@@ -711,7 +623,9 @@ export function ServicesPage() {
                   className="sp-stack-cell sp-reveal"
                   style={{ transitionDelay: `${i * 40}ms` }}
                 >
-                  <span className="sp-stack-icon">{s.icon}</span>
+                  <span className="sp-stack-icon">
+                    <s.icon className="w-7 h-7" style={{ color: s.color }} />
+                  </span>
                   <span className="sp-stack-name">{s.name}</span>
                   <span className="sp-stack-cat">{s.cat}</span>
                 </div>

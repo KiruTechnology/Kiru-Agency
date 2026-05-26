@@ -194,3 +194,11 @@ export const team = [
     socials: ["tw", "li", "gh"],
   },
 ];
+
+// Kiru Tech Services Data
+
+// Kiru Tech Projects Data
+
+// Kiru Tech Client Stories Data
+
+// Kiru Tech FAQ Data

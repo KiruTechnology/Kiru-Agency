@@ -1,4 +1,4 @@
-import FloatingCTA from "../components/FloatingCTA";
+// import FloatingCTA from "../components/FloatingCTA";
 import { HeroWithDomeGallery } from "../components/HeroWithDomeGallery";
 import {
   StatsStrip,
@@ -11,10 +11,8 @@ import {
   FAQ,
   Contact,
   Team,
-  // FloatingCTA,
+  FloatingCTA,
 } from "../components/sections";
-// import FloatingCTA from "../components/FloatingCTA";
-// import "../styles/kiru-styles.css";
 
 export function HomePage() {
   return (
@@ -30,7 +28,7 @@ export function HomePage() {
       <FAQ />
       <Contact />
       <Team />
-      {/* <FloatingCTA /> */}
+      <FloatingCTA />
     </>
   );
 }

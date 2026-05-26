@@ -1,4 +1,12 @@
 import { useRef, useEffect } from "react";
+import {
+  MagnifyingGlassIcon,
+  SquaresPlusIcon,
+  PaintBrushIcon,
+  Cog6ToothIcon,
+  BeakerIcon,
+  RocketLaunchIcon,
+} from "@heroicons/react/24/solid";
 
 export function Process() {
   const fillRef = useRef<HTMLDivElement>(null);
@@ -24,37 +32,37 @@ export function Process() {
   const steps = [
     {
       num: "01",
-      icon: "🔍",
+      icon: MagnifyingGlassIcon,
       title: "Discovery",
       desc: "We immerse ourselves in your business — goals, users, constraints — to build a shared understanding before a single line of code is written.",
     },
     {
       num: "02",
-      icon: "📐",
+      icon: SquaresPlusIcon,
       title: "Planning",
       desc: "Roadmap, milestones, tech stack, and team structure defined. You see everything upfront — no surprises, no scope creep.",
     },
     {
       num: "03",
-      icon: "🎨",
+      icon: PaintBrushIcon,
       title: "Design",
       desc: "Wireframes, design systems, and interactive prototypes. Your product looks exceptional before development begins.",
     },
     {
       num: "04",
-      icon: "⚙️",
+      icon: Cog6ToothIcon,
       title: "Development",
       desc: "Agile sprints with weekly demos. You're never in the dark — real code, real progress, real conversations every step of the way.",
     },
     {
       num: "05",
-      icon: "🧪",
+      icon: BeakerIcon,
       title: "Testing",
       desc: "Automated test suites, manual QA, performance audits, and security checks — we sign off only when it's bulletproof.",
     },
     {
       num: "06",
-      icon: "🚀",
+      icon: RocketLaunchIcon,
       title: "Launch",
       desc: "Deployment, monitoring, go-live support, and a 30-day post-launch window. We don't ship and disappear — we ship and stay.",
     },
@@ -96,8 +104,12 @@ export function Process() {
                   </div>
                 )}
                 <div className={isLeft ? "gh-step-left" : "gh-step-right"}>
-                  <span className="gh-step-num">{s.num}</span>
-                  <span className="gh-step-icon">{s.icon}</span>
+                  <div className="gh-step-header">
+                    <span className="gh-step-num">{s.num}</span>
+                    <span className="gh-step-icon">
+                      <s.icon className="w-8 h-8" />
+                    </span>
+                  </div>
                   <h3 className="gh-step-title">{s.title}</h3>
                   <p className="gh-step-desc">{s.desc}</p>
                 </div>
@@ -111,8 +123,9 @@ export function Process() {
           })}
 
           <div className="gh-timeline-cta reveal-up">
-            <a href="#contact" className="btn-green lg">
-              🚀 Start Your Project
+            <a href="#contact" className="btn-green lg flex items-center gap-2">
+              <RocketLaunchIcon className="w-5 h-5" />
+              Start Your Project
             </a>
           </div>
         </div>

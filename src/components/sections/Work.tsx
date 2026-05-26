@@ -1,5 +1,3 @@
-import React from "react";
-
 export function Work() {
   const projects = [
     {
@@ -215,7 +213,7 @@ export function Work() {
               Shipped
             </h2>
           </div>
-          <a href="#contact" className="btn-ghost reveal-right">
+          <a href="/projects" className="btn-ghost reveal-right">
             VIEW ALL PROJECTS →
           </a>
         </div>

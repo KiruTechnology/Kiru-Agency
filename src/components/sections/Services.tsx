@@ -1,21 +1,19 @@
-import React from "react";
-
 export function Services() {
   const services = [
     {
       num: "01",
+      title: "AI Automation & Chatbots",
+      body: "Custom AI agents, chatbots, and automation workflows. Integrate intelligent systems that learn from your data.",
+    },
+    {
+      num: "02",
       title: "Web Application Development",
       body: "Full-stack web apps — fast, accessible, and production-ready from day one.",
     },
     {
-      num: "02",
+      num: "03",
       title: "Mobile App Development",
       body: "Cross-platform or native mobile experiences that delight users on any device.",
-    },
-    {
-      num: "03",
-      title: "UI/UX Design",
-      body: "Research-driven design systems and interfaces that convert and retain users.",
     },
     {
       num: "04",
@@ -46,7 +44,7 @@ export function Services() {
               For Growth
             </h2>
           </div>
-          <a href="#contact" className="btn-ghost reveal-right">
+          <a href="/services" className="btn-ghost reveal-right">
             EXPLORE SERVICES →
           </a>
         </div>
