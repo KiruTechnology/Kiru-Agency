@@ -1,3 +1,32 @@
+import {
+  GlobeAltIcon,
+  DevicePhoneMobileIcon,
+  PaintBrushIcon,
+  Cog6ToothIcon,
+  RocketLaunchIcon,
+  BuildingLibraryIcon,
+  MagnifyingGlassIcon,
+  ClipboardDocumentIcon,
+  SparklesIcon,
+  ArrowTrendingUpIcon,
+  HandRaisedIcon,
+} from "@heroicons/react/24/solid";
+import {
+  DiReact,
+  DiGo,
+  DiRust,
+  DiPostgresql,
+  DiRedis,
+  DiDocker,
+} from "react-icons/di";
+import {
+  SiTypescript,
+  SiKubernetes,
+  SiAew,
+  SiVercel,
+  SiFigma,
+} from "react-icons/si";
+
 // service terms Data
 export const ServiceTerms = [
   {
@@ -195,10 +224,275 @@ export const team = [
   },
 ];
 
-// Kiru Tech Services Data
+// Kiru Tech ServicePage Data
+export const services = [
+  {
+    num: "01",
+    icon: SparklesIcon,
+    name: "AI Automation & AI Agents",
+    desc: "Custom AI agents and automation workflows that integrate with your systems. From document processing to intelligent task automation — we build AI that works for your business.",
+    tags: [
+      "OpenAI",
+      "Claude",
+      "LangChain",
+      "Automation",
+      "Integration",
+      "Custom Agents",
+    ],
+    timeline: "3–10 weeks",
+    price: "From $8k",
+    delivery: "Functional agents",
+  },
+  {
+    num: "02",
+    icon: SparklesIcon,
+    name: "AI Chatbots & Conversational AI",
+    desc: "Intelligent chatbots trained on your data. Whether customer support, internal knowledge assistants, or specialized domain experts — we build AI conversational interfaces that understand context.",
+    tags: [
+      "OpenAI",
+      "LangChain",
+      "Vector DB",
+      "RAG",
+      "Integration",
+      "Fine-tuning",
+    ],
+    timeline: "2–8 weeks",
+    price: "From $6k",
+    delivery: "Live chatbot",
+  },
+  {
+    num: "03",
+    icon: GlobeAltIcon,
+    name: "Web Application Development",
+    desc: "We build fast, accessible, production-ready full-stack web applications. From complex SaaS platforms to internal tools — we architect for the long run, not just the deadline.",
+    tags: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Redis"],
+    timeline: "6–16 weeks",
+    price: "From $12k",
+    delivery: "Weekly demos",
+  },
+  {
+    num: "04",
+    icon: DevicePhoneMobileIcon,
+    name: "Mobile App Development",
+    desc: "Cross-platform and native mobile apps that feel genuinely native, perform brilliantly on any device, and get shipped to the App Store and Play Store — end to end.",
+    tags: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Expo"],
+    timeline: "8–14 weeks",
+    price: "From $15k",
+    delivery: "TestFlight builds",
+  },
+  {
+    num: "05",
+    icon: PaintBrushIcon,
+    name: "UI/UX Design",
+    desc: "Research-driven product design. We run discovery workshops, create wireframes, design systems, and high-fidelity prototypes — all before a single line of code is written.",
+    tags: ["Figma", "Framer", "User Research", "Prototyping", "Design Systems"],
+    timeline: "2–6 weeks",
+    price: "From $5k",
+    delivery: "Interactive Figma",
+  },
+  {
+    num: "06",
+    icon: Cog6ToothIcon,
+    name: "Backend & API Development",
+    desc: "Robust, well-documented REST and GraphQL APIs. Microservice architectures, event-driven systems, and cloud infrastructure designed for reliability at any scale.",
+    tags: ["Go", "Rust", "Node.js", "GraphQL", "gRPC", "Kafka", "Kubernetes"],
+    timeline: "4–12 weeks",
+    price: "From $10k",
+    delivery: "API docs + tests",
+  },
+  {
+    num: "07",
+    icon: RocketLaunchIcon,
+    name: "MVP Development",
+    desc: "Validate your idea fast. We scope, design, and ship lean, polished MVPs in 4–8 weeks. Built to be extended — not thrown away. Our MVPs have raised seed rounds and found product-market fit.",
+    tags: ["React", "Node.js", "Supabase", "Vercel", "Stripe", "Auth"],
+    timeline: "4–8 weeks",
+    price: "From $8k",
+    delivery: "Live deployment",
+  },
+  {
+    num: "08",
+    icon: BuildingLibraryIcon,
+    name: "System Architecture & Consulting",
+    desc: "Struggling with a legacy system? Planning a migration? We design scalable architectures, review existing codebases, and give you a clear technical roadmap with no fluff.",
+    tags: [
+      "Architecture Review",
+      "Cloud Migration",
+      "Scalability",
+      "DevOps",
+      "CI/CD",
+    ],
+    timeline: "1–3 weeks",
+    price: "From $3k",
+    delivery: "Architecture docs",
+  },
+];
+
+export const process = [
+  {
+    num: "01",
+    icon: MagnifyingGlassIcon,
+    title: "Discovery Call",
+    desc: "We dig into your goals, users, and constraints. 60 minutes — free, no commitment.",
+  },
+  {
+    num: "02",
+    icon: ClipboardDocumentIcon,
+    title: "Scoped Proposal",
+    desc: "Detailed project scope, timeline, milestones, and fixed price. No hourly guesswork.",
+  },
+  {
+    num: "03",
+    icon: SparklesIcon,
+    title: "Sprint Delivery",
+    desc: "Weekly demos, open roadmap, and direct Slack access to your team throughout.",
+  },
+  {
+    num: "04",
+    icon: RocketLaunchIcon,
+    title: "Launch + Support",
+    desc: "We handle deployment, go-live support, and a 30-day post-launch window.",
+  },
+  {
+    num: "05",
+    icon: ArrowTrendingUpIcon,
+    title: "Scale Together",
+    desc: "Ongoing retainers for continuous engineering — grow with us past your MVP.",
+  },
+  {
+    num: "06",
+    icon: HandRaisedIcon,
+    title: "Long-term Partner",
+    desc: "Many clients start with a project and evolve into a full engineering partnership.",
+  },
+];
+
+export const stack = [
+  {
+    icon: DiReact,
+    name: "React",
+    cat: "Frontend",
+    isComponent: true,
+    color: "#61DAFB",
+  },
+  {
+    icon: SiTypescript,
+    name: "TypeScript",
+    cat: "Language",
+    isComponent: true,
+    color: "#3178C6",
+  },
+  {
+    icon: DiGo,
+    name: "Go",
+    cat: "Backend",
+    isComponent: true,
+    color: "#00ADD8",
+  },
+  {
+    icon: DiRust,
+    name: "Rust",
+    cat: "Backend",
+    isComponent: true,
+    color: "#CE422B",
+  },
+  {
+    icon: DiPostgresql,
+    name: "PostgreSQL",
+    cat: "Database",
+    isComponent: true,
+    color: "#336791",
+  },
+  {
+    icon: DiRedis,
+    name: "Redis",
+    cat: "Cache",
+    isComponent: true,
+    color: "#DC382D",
+  },
+  {
+    icon: DiDocker,
+    name: "Docker",
+    cat: "DevOps",
+    isComponent: true,
+    color: "#2496ED",
+  },
+  {
+    icon: SiKubernetes,
+    name: "Kubernetes",
+    cat: "DevOps",
+    isComponent: true,
+    color: "#326CE5",
+  },
+  {
+    icon: SiAew,
+    name: "AWS",
+    cat: "Cloud",
+    isComponent: true,
+    color: "#FF9900",
+  },
+  {
+    icon: SiVercel,
+    name: "Vercel",
+    cat: "Deploy",
+    isComponent: true,
+    color: "#000000",
+  },
+  {
+    icon: SiFigma,
+    name: "Figma",
+    cat: "Design",
+    isComponent: true,
+    color: "#F24E1E",
+  },
+  {
+    icon: DevicePhoneMobileIcon,
+    name: "React Native",
+    cat: "Mobile",
+    isComponent: true,
+    color: "#61DAFB",
+  },
+];
 
 // Kiru Tech Projects Data
 
 // Kiru Tech Client Stories Data
+export const testimonials = [
+  {
+    initials: "AO",
+    bg: "#1a3a5c",
+    name: "Amara Osei",
+    role: "CEO, TradeLink Africa",
+    body: "Kiru Tech didn't just write code — they thought about our product like co-founders. We launched in 8 weeks and our users love it.",
+  },
+  {
+    initials: "JM",
+    bg: "#2d1b4e",
+    name: "James Muriuki",
+    role: "CTO, PayEase Kenya",
+    body: "The most transparent engineering team I've worked with. Daily updates, zero surprises, and the architecture they built scales beautifully.",
+  },
+  {
+    initials: "SN",
+    bg: "#0f2a1a",
+    name: "Sofia Ndungu",
+    role: "Founder, GreenStack Labs",
+    body: "We came with a napkin sketch. Kiru Tech came back with a fully designed MVP that raised our seed round. Unreal team.",
+  },
+  {
+    initials: "DK",
+    bg: "#3a1a1a",
+    name: "Daniel Kamau",
+    role: "CTO, Lipa Later",
+    body: "From day one they felt like part of our team. The quality of code, the communication, the speed — everything exceeded our expectations.",
+  },
+  {
+    initials: "FO",
+    bg: "#1a3a2c",
+    name: "Fatima Omar",
+    role: "CEO, Savannah Pay",
+    body: "We'd tried two other agencies before Kiru Tech. The difference in product thinking and delivery speed was night and day.",
+  },
+];
 
 // Kiru Tech FAQ Data

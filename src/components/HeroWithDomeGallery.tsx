@@ -452,7 +452,7 @@ export function HeroWithDomeGallery() {
             <a href="#contact" className="btn-green lg">
               Start Your Project →
             </a>
-            <a href="#services" className="btn-ghost lg">
+            <a href="/services" className="btn-ghost lg">
               See All Services
             </a>
           </div>

@@ -41,7 +41,7 @@ export function PrivacyPolicy() {
               color: "var(--text-secondary)",
               marginInline: "auto",
             }}
-            className="max-w-5xl"
+            className="max-w-4xl"
           >
             {Policy.map((Pol, i) => (
               <section style={{ marginBottom: "2.5rem" }}>

@@ -1,49 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { testimonials } from "../../data";
 
 export function Testimonials() {
   const [idx, setIdx] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const VISIBLE = 2;
 
-  const testi = [
-    {
-      initials: "AO",
-      bg: "#1a3a5c",
-      name: "Amara Osei",
-      role: "CEO, TradeLink Africa",
-      body: "Kiru Tech didn't just write code — they thought about our product like co-founders. We launched in 8 weeks and our users love it.",
-    },
-    {
-      initials: "JM",
-      bg: "#2d1b4e",
-      name: "James Muriuki",
-      role: "CTO, PayEase Kenya",
-      body: "The most transparent engineering team I've worked with. Daily updates, zero surprises, and the architecture they built scales beautifully.",
-    },
-    {
-      initials: "SN",
-      bg: "#0f2a1a",
-      name: "Sofia Ndungu",
-      role: "Founder, GreenStack Labs",
-      body: "We came with a napkin sketch. Kiru Tech came back with a fully designed MVP that raised our seed round. Unreal team.",
-    },
-    {
-      initials: "DK",
-      bg: "#3a1a1a",
-      name: "Daniel Kamau",
-      role: "CTO, Lipa Later",
-      body: "From day one they felt like part of our team. The quality of code, the communication, the speed — everything exceeded our expectations.",
-    },
-    {
-      initials: "FO",
-      bg: "#1a3a2c",
-      name: "Fatima Omar",
-      role: "CEO, Savannah Pay",
-      body: "We'd tried two other agencies before Kiru Tech. The difference in product thinking and delivery speed was night and day.",
-    },
-  ];
-
-  const max = testi.length - VISIBLE;
+  const max = testimonials.length - VISIBLE;
   const slide = (dir: number) =>
     setIdx((i) => Math.min(max, Math.max(0, i + dir)));
 
@@ -93,7 +56,7 @@ export function Testimonials() {
 
         <div className="gh-testi-track-wrap">
           <div className="gh-testi-track" ref={trackRef}>
-            {testi.map((t) => (
+            {testimonials.map((t) => (
               <div className="gh-testi-card reveal-scale" key={t.name}>
                 <div className="gh-testi-quote">"</div>
                 <p className="gh-testi-body">{t.body}</p>
