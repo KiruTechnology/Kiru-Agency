@@ -16,17 +16,17 @@ export function Footer() {
     {
       head: "Services",
       links: [
-        ["Web Apps", "services"],
-        ["Mobile Apps", "#services"],
-        ["UI/UX Design", "#services"],
-        ["Backend & APIs", "#services"],
+        ["Web Apps", "/services"],
+        ["Mobile Apps", "/services"],
+        ["UI/UX Design", "/services"],
+        ["Backend & APIs", "/services"],
       ],
     },
     {
       head: "Contact",
       links: [
         ["hello@kirutech.io", "mailto:hello@kirutech.io"],
-        ["+254 700 000 000", "tel:+254700000000"],
+        ["+254 725676491", "tel:+254725676491"],
         ["Book a Call", "#contact"],
       ],
     },
