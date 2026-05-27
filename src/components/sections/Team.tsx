@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { team } from "../../data";
+import { team } from "../../data/index";
 
 export function Team() {
   const [active, setActive] = useState(0);

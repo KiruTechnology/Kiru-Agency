@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../styles/other.css";
-import { Policy } from "../data";
+import { Policy } from "../data/index";
 
 export function PrivacyPolicy() {
   const lastUpdated: string = "May, 2026";

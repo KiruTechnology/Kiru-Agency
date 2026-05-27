@@ -1,7 +1,7 @@
 import "../styles/servicePage.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { stack, process, services } from "../data";
+import { stack, process, services } from "../data/index";
 /* ── scroll reveal hook ── */
 function useReveal() {
   useEffect(() => {
