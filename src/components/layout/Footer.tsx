@@ -32,38 +32,40 @@ export function Footer() {
     },
   ];
   return (
-    <footer className="gh-footer">
-      <div className="gh-footer-cta">
-        <h2 className="gh-footer-cta-title">
+    <footer className="kiru-footer">
+      <div className="kiru-footer-cta">
+        <h2 className="kiru-footer-cta-title">
           Ready to Automate Your Business Process?
         </h2>
-        <p className="gh-footer-cta-sub">Click button below to Get Started.</p>
-        <button className="gh-footer-cta-btn">Start Now</button>
+        <p className="kiru-footer-cta-sub">
+          Click button below to Get Started.
+        </p>
+        <button className="kiru-footer-cta-btn">Start Now</button>
       </div>
-      <div className="gh-footer-inner">
-        <div className="gh-footer-brand">
-          <div className="gh-footer-logo">
+      <div className="kiru-footer-inner">
+        <div className="kiru-footer-brand">
+          <div className="kiru-footer-logo">
             <img
               src={kiruLogo}
               alt="Kiru Tech"
-              className="gh-footer-logo-img"
+              className="kiru-footer-logo-img"
             />
-            <span className="gh-footer-logo-text">Kiru Tech</span>
+            <span className="kiru-footer-logo-text">Kiru Tech</span>
           </div>
-          <p className="gh-footer-tagline">
+          <p className="kiru-footer-tagline">
             A product engineering partner that builds scalable software systems.
           </p>
-          <div className="gh-footer-socials">
+          <div className="kiru-footer-socials">
             {[<IconX />, <IconLi />, <IconGh />].map((icon, i) => (
-              <a key={i} href="#" className="gh-footer-social">
+              <a key={i} href="#" className="kiru-footer-social">
                 {icon}
               </a>
             ))}
           </div>
         </div>
         {cols.map((col) => (
-          <div className="gh-footer-col" key={col.head}>
-            <p className="gh-footer-col-head">{col.head}</p>
+          <div className="kiru-footer-col" key={col.head}>
+            <p className="kiru-footer-col-head">{col.head}</p>
             {col.links.map(([label, href]) => (
               <a key={label} href={href}>
                 {label}
@@ -72,11 +74,11 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="gh-footer-bottom pb-6!">
+      <div className="kiru-footer-bottom pb-6!">
         <span>
           © {new Date().getFullYear()} Kiru Tech. All rights reserved.
         </span>
-        <div className="gh-footer-legal">
+        <div className="kiru-footer-legal">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
         </div>

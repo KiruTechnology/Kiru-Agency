@@ -6,12 +6,12 @@ export function StatsStrip() {
     { num: "99%", label: "Client Satisfaction" },
   ];
   return (
-    <div className="gh-stats">
-      <div className="gh-stats-inner stagger">
+    <div className="kiru-stats">
+      <div className="kiru-stats-inner stagger">
         {stats.map((s) => (
-          <div className="gh-stat-cell reveal-up" key={s.label}>
-            <div className="gh-stat-num">{s.num}</div>
-            <div className="gh-stat-label">{s.label}</div>
+          <div className="kiru-stat-cell reveal-up" key={s.label}>
+            <div className="kiru-stat-num">{s.num}</div>
+            <div className="kiru-stat-label">{s.label}</div>
           </div>
         ))}
       </div>

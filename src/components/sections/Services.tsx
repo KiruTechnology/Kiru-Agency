@@ -33,12 +33,12 @@ export function Services() {
   ];
 
   return (
-    <section className="gh-section gh-services" id="services">
-      <div className="gh-inner">
-        <div className="gh-services-header">
+    <section className="kiru-section kiru-services" id="services">
+      <div className="kiru-inner">
+        <div className="kiru-services-header">
           <div className="reveal-left">
-            <div className="gh-overline">What We Do</div>
-            <h2 className="gh-section-title">
+            <div className="kiru-overline">What We Do</div>
+            <h2 className="kiru-section-title">
               Services Built
               <br />
               For Growth
@@ -49,10 +49,10 @@ export function Services() {
           </a>
         </div>
 
-        <div className="gh-services-grid stagger">
+        <div className="kiru-services-grid stagger">
           {services.map((s) => (
-            <div className="gh-svc-card reveal-up" key={s.num}>
-              <span className="gh-svc-num">{s.num}</span>
+            <div className="kiru-svc-card reveal-up" key={s.num}>
+              <span className="kiru-svc-num">{s.num}</span>
               <h3>{s.title}</h3>
               <p>{s.body}</p>
             </div>

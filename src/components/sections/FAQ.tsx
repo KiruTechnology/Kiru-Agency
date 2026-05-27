@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
@@ -38,37 +38,37 @@ export function FAQ() {
   ];
 
   return (
-    <section className="gh-section gh-faq" id="faq">
-      <div className="gh-inner">
-        <div className="gh-faq-inner">
+    <section className="kiru-section gh-faq" id="faq">
+      <div className="kiru-inner">
+        <div className="kiru-faq-inner">
           <div className="reveal-left">
-            <div className="gh-overline">Questions</div>
-            <h2 className="gh-section-title">
+            <div className="kiru-overline">Questions</div>
+            <h2 className="kiru-section-title">
               Answers You
               <br />
               <span style={{ color: "var(--blue)" }}>Need</span>
             </h2>
-            <p className="gh-faq-side-note">
+            <p className="kiru-faq-side-note">
               Can't find what you're looking for?{" "}
               <a href="#contact">Let's talk →</a>
             </p>
           </div>
 
-          <div className="gh-faq-list">
+          <div className="kiru-faq-list">
             {faqs.map((f, i) => (
               <div
                 key={f.q}
-                className={`gh-faq-item reveal-up${open === i ? " open" : ""}`}
+                className={`kiru-faq-item reveal-up${open === i ? " open" : ""}`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <button
-                  className="gh-faq-q"
+                  className="kiru-faq-q"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
                   {f.q}
-                  <span className="gh-faq-arrow">↓</span>
+                  <span className="kiru-faq-arrow">↓</span>
                 </button>
-                <div className="gh-faq-a">
+                <div className="kiru-faq-a">
                   <p>{f.a}</p>
                 </div>
               </div>

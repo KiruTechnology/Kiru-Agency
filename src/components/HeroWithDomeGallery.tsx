@@ -240,7 +240,7 @@ export function HeroWithDomeGallery() {
           }}
         >
           {/* Aurora background */}
-          <div className="gh-hero-bg" />
+          <div className="kiru-hero-bg" />
 
           {/* Floating particles */}
           {[
@@ -253,7 +253,7 @@ export function HeroWithDomeGallery() {
           ].map((p, i) => (
             <div
               key={i}
-              className="gh-particle"
+              className="kiru-particle"
               style={{
                 width: p.size,
                 height: p.size,
@@ -289,13 +289,13 @@ export function HeroWithDomeGallery() {
           >
             <div style={{ maxWidth: 640, textAlign: "center" }}>
               {/* Eyebrow */}
-              <div className="gh-eyebrow" style={{ marginBottom: 24 }}>
-                <div className="gh-eyebrow-dot" />
+              <div className="kiru-eyebrow" style={{ marginBottom: 24 }}>
+                <div className="kiru-eyebrow-dot" />
                 Product Engineering Agency
               </div>
 
               {/* H1 */}
-              <h1 className="gh-hero-title">
+              <h1 className="kiru-hero-title">
                 We Build
                 <br />
                 <span className="gradient-word">Software</span>
@@ -304,13 +304,13 @@ export function HeroWithDomeGallery() {
               </h1>
 
               {/* Subtext */}
-              <p className="gh-hero-sub">
+              <p className="kiru-hero-sub">
                 From idea to product — we design, develop, and launch
-                high-quality software built for growth.
+                hikiru-quality software built for growth.
               </p>
 
               {/* CTAs */}
-              <div className="gh-hero-actions">
+              <div className="kiru-hero-actions">
                 <a href="#contact" className="btn-green lg">
                   ✦ Start Your Project
                 </a>
@@ -320,8 +320,8 @@ export function HeroWithDomeGallery() {
               </div>
 
               {/* Social proof */}
-              <div className="gh-hero-social-proof">
-                <div className="gh-avatars">
+              <div className="kiru-hero-social-proof">
+                <div className="kiru-avatars">
                   {["👤", "👤", "👤", "👤"].map((a, i) => (
                     <span key={i}>{a}</span>
                   ))}
@@ -399,14 +399,14 @@ export function HeroWithDomeGallery() {
               opacity: 0, // faded in by GSAP
             }}
           >
-            <div className="gh-overline" style={{ justifyContent: "center" }}>
+            <div className="kiru-overline" style={{ justifyContent: "center" }}>
               Our Work
             </div>
-            <h2 className="gh-section-title" style={{ marginBottom: 12 }}>
+            <h2 className="kiru-section-title" style={{ marginBottom: 12 }}>
               Products We've Shipped
             </h2>
             <p
-              className="gh-section-sub"
+              className="kiru-section-sub"
               style={{ margin: "0 auto 16px", textAlign: "center" }}
             >
               Drag to explore — a curated view of interfaces, tools, and systems

@@ -1,9 +1,3 @@
-/**
- * pages/SignupPage.tsx
- *
- * Standalone signup page (no navbar/footer)
- */
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/kiru-styles.css";

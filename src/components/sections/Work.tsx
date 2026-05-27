@@ -202,12 +202,12 @@ export function Work() {
   ];
 
   return (
-    <section className="gh-section gh-work" id="work">
-      <div className="gh-inner">
-        <div className="gh-work-header">
+    <section className="kiru-section kiru-work" id="work">
+      <div className="kiru-inner">
+        <div className="kiru-work-header">
           <div className="reveal-left">
-            <div className="gh-overline">Proof of Work</div>
-            <h2 className="gh-section-title">
+            <div className="kiru-overline">Proof of Work</div>
+            <h2 className="kiru-section-title">
               Products We've
               <br />
               Shipped
@@ -218,17 +218,17 @@ export function Work() {
           </a>
         </div>
 
-        <div className="gh-work-grid stagger">
+        <div className="kiru-work-grid stagger">
           {projects.map((p) => (
-            <div className="gh-work-card reveal-up" key={p.title}>
-              <div className="gh-work-thumb">
+            <div className="kiru-work-card reveal-up" key={p.title}>
+              <div className="kiru-work-thumb">
                 {p.svg}
-                <div className="gh-work-overlay">
-                  <p className="gh-work-tag">{p.tag}</p>
-                  <p className="gh-work-outcome">{p.outcome}</p>
+                <div className="kiru-work-overlay">
+                  <p className="kiru-work-tag">{p.tag}</p>
+                  <p className="kiru-work-outcome">{p.outcome}</p>
                 </div>
               </div>
-              <div className="gh-work-meta">
+              <div className="kiru-work-meta">
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
               </div>

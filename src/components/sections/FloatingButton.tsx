@@ -22,9 +22,9 @@ export function FloatingCTA() {
   }, []);
 
   return (
-    <div className={`gh-float${visible && !hidden ? " visible" : " hidden"}`}>
-      <a href="#contact" className="gh-float-btn">
-        <div className="gh-float-dot" />
+    <div className={`kiru-float${visible && !hidden ? " visible" : " hidden"}`}>
+      <a href="#contact" className="kiru-float-btn">
+        <div className="kiru-float-dot" />
         Start Your Project
       </a>
     </div>

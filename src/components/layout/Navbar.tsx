@@ -1,3 +1,4 @@
+import "../../styles/navbar.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
@@ -196,208 +197,29 @@ export function Navbar() {
 
   return (
     <>
-      <style>{`
-        .gh-nav-links {
-          gap: 32px;
-        }
-
-        .gh-nav-dropdown {
-          position: relative;
-        }
-
-        .gh-nav-dropdown-trigger {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-          padding: 8px 0;
-          position: relative;
-          font-size: 0.95rem;
-          font-weight: 500;
-          color: #e6edf3;
-          background: none;
-          border: none;
-        }
-
-        .gh-nav-dropdown-trigger:hover {
-          color: #58a6ff;
-        }
-
-        .gh-nav-dropdown-trigger svg {
-          width: 16px;
-          height: 16px;
-          transition: transform 0.2s;
-        }
-
-        .gh-nav-dropdown.open .gh-nav-dropdown-trigger svg {
-          transform: rotate(180deg);
-        }
-
-        .gh-nav-dropdown-menu {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background: #f6f8fa;
-          border: 1px solid #d0d7de;
-          border-radius: 12px;
-          padding: 24px;
-          margin-top: -0.5rem;
-          min-width: 750px;
-          display: none;
-          z-index: 1000;
-          box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-          animation: slideDown 0.2s ease-out;
-        }
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-12px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .gh-nav-dropdown.open .gh-nav-dropdown-menu {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
-        }
-
-        .gh-dropdown-column {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .gh-dropdown-column-title {
-          font-size: 0.7rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: #57606a;
-          margin-bottom: 8px;
-        }
-
-        .gh-dropdown-item {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-start;
-          gap: 12px;
-          padding: 10px 0;
-          text-decoration: none;
-          color: #24292f;
-          transition: color 0.2s;
-        }
-
-        .gh-dropdown-item:hover {
-          color: #0969da;
-        }
-
-        .gh-dropdown-item-icon {
-          flex-shrink: 0;
-          width: 20px;
-          height: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: #24292f;
-        }
-
-        .gh-dropdown-item:hover .gh-dropdown-item-icon {
-          color: #0969da;
-        }
-
-        .gh-dropdown-item-content {
-          display: flex;
-          flex-direction: column;
-          gap: 3px;
-          flex: 1;
-        }
-
-        .gh-dropdown-item-label {
-          font-size: 0.9rem;
-          font-weight: 600;
-          color: #24292f;
-        }
-
-        .gh-dropdown-item-desc {
-          font-size: 0.8rem;
-          color: #57606a;
-          line-height: 1.4;
-        }
-
-        .gh-dropdown-item:hover .gh-dropdown-item-label {
-          color: #0969da;
-        }
-
-        .gh-dropdown-item:hover .gh-dropdown-item-desc {
-          color: #424a51;
-          font-weight: 500;
-        }
-
-        .gh-dropdown-tags {
-          display: flex;
-          gap: 4px;
-          flex-wrap: wrap;
-          margin-top: 6px;
-        }
-
-        .gh-dropdown-tag {
-          font-size: 0.65rem;
-          background: #eaeef2;
-          color: #0969da;
-          padding: 3px 8px;
-          border-radius: 4px;
-          border: 1px solid #d0d7de;
-          font-weight: 500;
-        }
-
-        @media (max-width: 960px) {
-          .gh-nav-dropdown-menu {
-            min-width: 600px;
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media (max-width: 640px) {
-          .gh-nav-dropdown-menu {
-            min-width: 100vw;
-            left: -24px;
-            grid-template-columns: 1fr;
-          }
-
-          .gh-nav-links {
-            gap: 16px;
-          }
-        }
-      `}</style>
-
-      <nav className={`gh-nav${scrolled ? " scrolled" : ""}`}>
-        <div className="gh-nav-inner">
-          <a href="/" className="gh-logo">
-            <img src={kiruLogo} alt="Kiru Tech" className="gh-logo-img" />
-            <span className="gh-logo-text">Kiru Tech</span>
+      <nav className={`kiru-nav${scrolled ? " scrolled" : ""}`}>
+        <div className="kiru-nav-inner">
+          <a href="/" className="kiru-logo">
+            <img src={kiruLogo} alt="Kiru Tech" className="kiru-logo-img" />
+            <span className="kiru-logo-text">Kiru Tech</span>
           </a>
-          <ul className="gh-nav-links">
+          <ul className="kiru-nav-links">
             {navItems.map((item) => (
               <li key={item.label}>
                 {item.type === "dropdown" ? (
                   <div
-                    className={`gh-nav-dropdown${openDropdown === item.label ? " open" : ""}`}
+                    className={`kiru-nav-dropdown${openDropdown === item.label ? " open" : ""}`}
                     onMouseEnter={() => setOpenDropdown(item.label)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button className="gh-nav-dropdown-trigger">
+                    <button className="kiru-nav-dropdown-trigger">
                       {item.label}
                       <ChevronDownIcon />
                     </button>
-                    <div className="gh-nav-dropdown-menu">
+                    <div className="kiru-nav-dropdown-menu">
                       {item.columns?.map((column, idx) => (
-                        <div key={idx} className="gh-dropdown-column">
-                          <div className="gh-dropdown-column-title">
+                        <div key={idx} className="kiru-dropdown-column">
+                          <div className="kiru-dropdown-column-title">
                             {column.title}
                           </div>
                           {column.items?.map((subitem, sidx) => {
@@ -406,29 +228,29 @@ export function Navbar() {
                               <a
                                 key={sidx}
                                 href={(subitem as any).link ?? item.link}
-                                className="gh-dropdown-item"
+                                className="kiru-dropdown-item"
                               >
                                 {ItemIcon && (
-                                  <span className="gh-dropdown-item-icon">
+                                  <span className="kiru-dropdown-item-icon">
                                     <ItemIcon className="w-5 h-5" />
                                   </span>
                                 )}
-                                <div className="gh-dropdown-item-content">
-                                  <span className="gh-dropdown-item-label">
+                                <div className="kiru-dropdown-item-content">
+                                  <span className="kiru-dropdown-item-label">
                                     {subitem.label}
                                   </span>
                                   {(subitem as any).desc && (
-                                    <span className="gh-dropdown-item-desc">
+                                    <span className="kiru-dropdown-item-desc">
                                       {(subitem as any).desc}
                                     </span>
                                   )}
                                   {(subitem as any).tags && (
-                                    <div className="gh-dropdown-tags">
+                                    <div className="kiru-dropdown-tags">
                                       {(subitem as any).tags.map(
                                         (tag: string) => (
                                           <span
                                             key={tag}
-                                            className="gh-dropdown-tag"
+                                            className="kiru-dropdown-tag"
                                           >
                                             {tag}
                                           </span>
@@ -450,7 +272,7 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="gh-nav-right">
+          <div className="kiru-nav-right">
             <a href="#contact" className="btn-ghost">
               Sign in
             </a>
@@ -458,7 +280,7 @@ export function Navbar() {
               Start Project
             </a>
             <button
-              className={`gh-burger${drawer ? " open" : ""}`}
+              className={`kiru-burger${drawer ? " open" : ""}`}
               onClick={() => setDrawer((v) => !v)}
               aria-label="Menu"
             >
@@ -469,7 +291,7 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      <div className={`gh-drawer${drawer ? " open" : ""}`}>
+      <div className={`kiru-drawer${drawer ? " open" : ""}`}>
         <ul>
           {navItems.map((l) => (
             <li key={l.label}>

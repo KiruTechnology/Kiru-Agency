@@ -54,31 +54,31 @@ export function Pricing() {
   ];
 
   return (
-    <section className="gh-section gh-pricing" id="pricing">
-      <div className="gh-inner">
+    <section className="kiru-section kiru-pricing" id="pricing">
+      <div className="kiru-inner">
         <div className="reveal-up">
-          <div className="gh-overline">Investment</div>
-          <h2 className="gh-section-title">
+          <div className="kiru-overline">Investment</div>
+          <h2 className="kiru-section-title">
             Clear Pricing.
             <br />
             No Surprises.
           </h2>
         </div>
 
-        <div className="gh-pricing-grid stagger">
+        <div className="kiru-pricing-grid stagger">
           {plans.map((p) => (
             <div
               key={p.tier}
-              className={`gh-pricing-card reveal-up${p.featured ? " featured" : ""}`}
+              className={`kiru-pricing-card reveal-up${p.featured ? " featured" : ""}`}
             >
-              {p.badge && <div className="gh-pricing-badge">{p.badge}</div>}
-              <div className="gh-pricing-tier">{p.tier}</div>
-              <div className="gh-pricing-tag">{p.tag}</div>
-              <div className="gh-pricing-amount">
+              {p.badge && <div className="kiru-pricing-badge">{p.badge}</div>}
+              <div className="kiru-pricing-tier">{p.tier}</div>
+              <div className="kiru-pricing-tag">{p.tag}</div>
+              <div className="kiru-pricing-amount">
                 <strong>{p.price}</strong>
                 {p.price !== "Let's talk" && <span>starting from</span>}
               </div>
-              <ul className="gh-pricing-list">
+              <ul className="kiru-pricing-list">
                 {p.features.map((f) => (
                   <li key={f}>✓ {f}</li>
                 ))}

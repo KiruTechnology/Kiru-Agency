@@ -17,8 +17,8 @@ export function Team() {
   }, []);
 
   return (
-    <section className="gh-section gh-team" id="team" ref={sectionRef}>
-      <div className="gh-inner">
+    <section className="kiru-section kiru-team" id="team" ref={sectionRef}>
+      <div className="kiru-inner">
         <div
           style={{
             display: "flex",
@@ -30,48 +30,48 @@ export function Team() {
           }}
         >
           <div className="reveal-left">
-            <div className="gh-overline">The Team</div>
-            <h2 className="gh-section-title">
+            <div className="kiru-overline">The Team</div>
+            <h2 className="kiru-section-title">
               People Behind
               <br />
               the Product
             </h2>
           </div>
-          <span className="gh-team-hint reveal-right">
+          <span className="kiru-team-hint reveal-right">
             Click a card to expand
           </span>
         </div>
 
-        <div className="gh-team-cols">
+        <div className="kiru-team-cols">
           {team.map((m, i) => (
             <div
               key={m.num}
-              className={`gh-tc${active === i ? " active" : active !== -1 ? " inactive" : ""}`}
+              className={`kiru-tc${active === i ? " active" : active !== -1 ? " inactive" : ""}`}
               onClick={() => setActive(i)}
             >
               {/* Collapsed */}
-              <div className="gh-tc-collapsed">
+              <div className="kiru-tc-collapsed">
                 <div
-                  className="gh-tc-monogram"
+                  className="kiru-tc-monogram"
                   style={{
                     background: `linear-gradient(135deg,${m.from},${m.to})`,
                   }}
                 >
                   {m.initials}
                 </div>
-                <div className="gh-tc-name-block">
-                  <span className="gh-tc-num">{m.num}</span>
-                  <strong className="gh-tc-name">{m.name}</strong>
-                  <span className="gh-tc-role">{m.role}</span>
+                <div className="kiru-tc-name-block">
+                  <span className="kiru-tc-num">{m.num}</span>
+                  <strong className="kiru-tc-name">{m.name}</strong>
+                  <span className="kiru-tc-role">{m.role}</span>
                 </div>
-                <span className="gh-tc-arrow">→</span>
+                <span className="kiru-tc-arrow">→</span>
               </div>
 
               {/* Expanded */}
-              <div className="gh-tc-expanded">
-                <div className="gh-tc-exp-top">
+              <div className="kiru-tc-expanded">
+                <div className="kiru-tc-exp-top">
                   <div
-                    className="gh-tc-monogram"
+                    className="kiru-tc-monogram"
                     style={{
                       width: 52,
                       height: 52,
@@ -81,31 +81,31 @@ export function Team() {
                     {m.initials}
                   </div>
                   <div>
-                    <span className="gh-tc-exp-name">{m.name}</span>
-                    <span className="gh-tc-exp-role">{m.role}</span>
+                    <span className="kiru-tc-exp-name">{m.name}</span>
+                    <span className="kiru-tc-exp-role">{m.role}</span>
                   </div>
                 </div>
-                <p className="gh-tc-bio">{m.bio}</p>
-                <div className="gh-tc-mockup">
-                  <div className="gh-tc-mock-bar" />
+                <p className="kiru-tc-bio">{m.bio}</p>
+                <div className="kiru-tc-mockup">
+                  <div className="kiru-tc-mock-bar" />
                   {m.tags.map((row, ri) => (
-                    <div className="gh-tc-mock-row" key={ri}>
+                    <div className="kiru-tc-mock-row" key={ri}>
                       {row.map((t) => (
-                        <span className="gh-tc-tag" key={t}>
+                        <span className="kiru-tc-tag" key={t}>
                           {t}
                         </span>
                       ))}
                     </div>
                   ))}
-                  <div className="gh-tc-mock-stat">
+                  <div className="kiru-tc-mock-stat">
                     {m.stats.map((s) => (
                       <span key={s}>{s}</span>
                     ))}
                   </div>
                 </div>
-                <div className="gh-tc-socials">
+                <div className="kiru-tc-socials">
                   {m.socials.map((s) => (
-                    <a key={s} href="#" className="gh-tc-soc">
+                    <a key={s} href="#" className="kiru-tc-soc">
                       {s}
                     </a>
                   ))}

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// import "../styles/kiru-styles.css";
 import "../styles/other.css";
 import { ServiceTerms } from "../data/index";
 

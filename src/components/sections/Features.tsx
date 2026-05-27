@@ -34,30 +34,30 @@ export function Features() {
   ];
 
   return (
-    <section className="gh-section gh-features" id="features">
-      <div className="gh-inner">
+    <section className="kiru-section gh-features" id="features">
+      <div className="kiru-inner">
         <div className="reveal-up">
-          <div className="gh-overline">Why Kiru Tech</div>
-          <h2 className="gh-section-title">
+          <div className="kiru-overline">Why Kiru Tech</div>
+          <h2 className="kiru-section-title">
             Built Different.
             <br />
             By Design.
           </h2>
         </div>
 
-        <div className="gh-bento stagger">
+        <div className="kiru-bento stagger">
           {feats.map((f) => (
             <div
               key={f.title}
-              className={`gh-bento-card reveal-up${f.span ? " span-2" : ""}`}
+              className={`kiru-bento-card reveal-up${f.span ? " span-2" : ""}`}
             >
-              <span className="gh-bento-icon">{f.icon}</span>
+              <span className="kiru-bento-icon">{f.icon}</span>
               <h3>{f.title}</h3>
               <p>{f.body}</p>
             </div>
           ))}
           {/* CTA card */}
-          <div className="gh-bento-card gh-bento-cta reveal-scale">
+          <div className="kiru-bento-card gh-bento-cta reveal-scale">
             <h3>Ready to build?</h3>
             <p
               style={{
