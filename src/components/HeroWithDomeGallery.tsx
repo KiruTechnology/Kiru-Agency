@@ -404,7 +404,7 @@ export function HeroWithDomeGallery() {
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "24px 40px 80px",
+              padding: "24px 40px 24px",
               display: "flex",
               justifyContent: "center",
               gap: 16,
@@ -423,12 +423,6 @@ export function HeroWithDomeGallery() {
         </div>
       </div>
       {/* end 260vh wrapper */}
-
-      {/* Minimal spacer to transition to next section */}
-      <div
-        style={{ height: "40px", background: "var(--bg)" }}
-        id="after-dome"
-      />
     </>
   );
 }
