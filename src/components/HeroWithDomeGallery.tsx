@@ -189,12 +189,12 @@ export function HeroWithDomeGallery() {
         {
           clipPath: "inset(0% 0% 0% 0% round 0px)",
           y: 0,
-          ease: "power3.inOut",
+          ease: "power2.inOut",
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: "0% top", // dome starts rising immediately with hero fade
-            end: "bottom top", // fully covers hero by the time wrapper ends
-            scrub: 1,
+            start: "top top", // dome starts appearing immediately with hero fade
+            end: "85% top", // fully visible before wrapper ends
+            scrub: 1.2,
           },
         },
       );
@@ -380,14 +380,17 @@ export function HeroWithDomeGallery() {
             right: 0,
             minHeight: "100vh",
             background: "var(--bg)",
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(88, 166, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(175, 113, 247, 0.03) 0%, transparent 50%)",
             zIndex: 2,
             clipPath: "inset(100% 0% 0% 0% round 24px 24px 0 0)", // starts hidden
             willChange: "clip-path",
             borderTop: "1px solid var(--border)",
           }}
         >
+          {/* Aurora background — same as hero */}
+          <div
+            className="kiru-hero-bg"
+            style={{ position: "absolute", inset: 0, zIndex: 0 }}
+          />
           {/* Section header */}
           <div
             className="dome-content-inner"
@@ -397,6 +400,8 @@ export function HeroWithDomeGallery() {
               padding: "80px 40px 32px",
               textAlign: "center",
               opacity: 0, // faded in by GSAP
+              position: "relative",
+              zIndex: 1,
             }}
           >
             <div className="kiru-overline" style={{ justifyContent: "center" }}>
@@ -425,16 +430,36 @@ export function HeroWithDomeGallery() {
           </div>
 
           {/* ── THE DOME GALLERY ── */}
-          <div style={{ width: "100vw", height: "80vh" }}>
-            <DomeGallery
-              images={DOME_IMAGES}
-              fit={0.8}
-              minRadius={600}
-              maxVerticalRotationDeg={25} // allow slight vertical tilt
-              segments={34}
-              dragDampening={2}
-              grayscale // greyscale → color on hover (premium feel)
-            />
+          <div
+            style={{
+              width: "100vw",
+              height: "80vh",
+              position: "relative",
+              zIndex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                transform: "scale(0.9)",
+                transformOrigin: "center",
+              }}
+            >
+              <DomeGallery
+                images={DOME_IMAGES}
+                fit={0.8}
+                minRadius={600}
+                maxVerticalRotationDeg={25} // allow slight vertical tilt
+                segments={34}
+                dragDampening={2}
+                grayscale // greyscale → color on hover (premium feel)
+                overlayBlurColor="transparent" // Show the aurora background
+              />
+            </div>
           </div>
 
           {/* Bottom CTA strip */}
@@ -447,6 +472,8 @@ export function HeroWithDomeGallery() {
               justifyContent: "center",
               gap: 16,
               flexWrap: "wrap",
+              position: "relative",
+              zIndex: 1,
             }}
           >
             <a href="#contact" className="btn-green lg">
