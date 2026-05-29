@@ -5,6 +5,27 @@ import DomeGallery from "./DomeGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * DOME_IMAGES — Optimized for fast loading & crisp quality
+ *
+ * Image Requirements:
+ * - Format: WebP (25-35% smaller than JPG, better quality than JPEG)
+ * - Max Size: 150KB per image
+ * - Quality: 85-95 (balance quality with file size)
+ *
+ * Lazy Loading:
+ * - DomeGallery renders images dynamically
+ * - Browser automatically defers off-screen image loading
+ * - Use DevTools Network tab to verify "lazy" behavior
+ *
+ * Folder Structure:
+ * src/assets/projects/     (6 images)  — UI mockups, dashboards
+ * src/assets/stack/        (6 images)  — Tech logo cards
+ * src/assets/team/         (3 images)  — Team photos
+ * src/assets/outcomes/     (4 images)  — Stats & milestone cards
+ *
+ * See IMAGE_OPTIMIZATION_GUIDE.md for detailed setup instructions.
+ */
 const DOME_IMAGES = [
   {
     src: "/assets/projects/flowboard-dashboard.webp",
@@ -93,8 +114,8 @@ export function HeroWithDomeGallery() {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: "35% top", // ← KEY FIX: dome starts after text is 64% faded
-            end: "90% top",
+            start: "20% top", // ← Dome appears earlier, creates snappy reveal
+            end: "65% top", // ← Faster animation for punchier effect
             scrub: 1.4,
           },
         },
@@ -403,9 +424,9 @@ export function HeroWithDomeGallery() {
       </div>
       {/* end 260vh wrapper */}
 
-      {/* Spacer so the rest of the page renders below the dome */}
+      {/* Minimal spacer to transition to next section */}
       <div
-        style={{ height: "100vh", background: "var(--bg)" }}
+        style={{ height: "40px", background: "var(--bg)" }}
         id="after-dome"
       />
     </>
