@@ -173,4 +173,18 @@
   .kiru-nav-links {
     gap: 16px;
   }
+
+  /* Mobile dropdown hover behavior */
+  .kiru-nav-dropdown {
+    display: inline-block;
+  }
+
+  .kiru-nav-dropdown-menu {
+    display: none;
+  }
+
+  .kiru-nav-dropdown:hover .kiru-nav-dropdown-menu,
+  .kiru-nav-dropdown:focus-within .kiru-nav-dropdown-menu {
+    display: grid;
+  }
 }

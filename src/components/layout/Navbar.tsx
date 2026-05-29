@@ -27,6 +27,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [drawerDropdown, setDrawerDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
@@ -295,12 +296,114 @@ export function Navbar() {
         <ul>
           {navItems.map((l) => (
             <li key={l.label}>
-              <a
-                href={l.link || `/#${l.label.toLowerCase()}`}
-                onClick={() => setDrawer(false)}
-              >
-                {l.label}
-              </a>
+              {l.type === "dropdown" ? (
+                <>
+                  <button
+                    onClick={() =>
+                      setDrawerDropdown(
+                        drawerDropdown === l.label ? null : l.label,
+                      )
+                    }
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "10px 12px",
+                      fontSize: "0.9rem",
+                      fontWeight: 500,
+                      color: "var(--text-secondary)",
+                      background: "none",
+                      border: "none",
+                      borderBottom: "1px solid var(--border-muted)",
+                      borderRadius: "var(--radius-sm)",
+                      cursor: "pointer",
+                      transition: "color 0.15s, background 0.15s",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color =
+                        "var(--text-primary)";
+                      (e.currentTarget as HTMLElement).style.background =
+                        "var(--surface-2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color =
+                        "var(--text-secondary)";
+                      (e.currentTarget as HTMLElement).style.background =
+                        "none";
+                    }}
+                  >
+                    {l.label}
+                    <ChevronDownIcon
+                      style={{
+                        width: 16,
+                        height: 16,
+                        transition: "transform 0.2s",
+                        transform:
+                          drawerDropdown === l.label
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                      }}
+                    />
+                  </button>
+                  {drawerDropdown === l.label && (
+                    <div
+                      style={{
+                        paddingLeft: 12,
+                        marginTop: 8,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 8,
+                      }}
+                    >
+                      {l.columns?.map((column) =>
+                        column.items?.map((subitem) => (
+                          <a
+                            key={(subitem as any).label}
+                            href={(subitem as any).link ?? l.link}
+                            onClick={() => {
+                              setDrawer(false);
+                              setDrawerDropdown(null);
+                            }}
+                            style={{
+                              display: "block",
+                              padding: "8px 12px",
+                              fontSize: "0.85rem",
+                              color: "var(--text-secondary)",
+                              textDecoration: "none",
+                              borderRadius: "var(--radius-sm)",
+                              transition: "color 0.15s, background 0.15s",
+                            }}
+                            onMouseEnter={(e) => {
+                              (e.currentTarget as HTMLElement).style.color =
+                                "var(--blue)";
+                              (
+                                e.currentTarget as HTMLElement
+                              ).style.background = "var(--surface-2)";
+                            }}
+                            onMouseLeave={(e) => {
+                              (e.currentTarget as HTMLElement).style.color =
+                                "var(--text-secondary)";
+                              (
+                                e.currentTarget as HTMLElement
+                              ).style.background = "none";
+                            }}
+                          >
+                            {(subitem as any).label}
+                          </a>
+                        )),
+                      )}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <a
+                  href={l.link || `/#${l.label.toLowerCase()}`}
+                  onClick={() => setDrawer(false)}
+                >
+                  {l.label}
+                </a>
+              )}
             </li>
           ))}
           <li>

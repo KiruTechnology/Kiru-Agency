@@ -56,6 +56,14 @@ body {
   padding: 96px 40px;
 }
 
+.kiru-section:has(+ .kiru-section.gh-contact) {
+  border-bottom: 1px solid var(--border);
+}
+
+.kiru-section.gh-contact {
+  border-bottom: 1px solid var(--border);
+}
+
 .kiru-inner {
   max-width: var(--max);
   margin: 0 auto;
@@ -1400,6 +1408,7 @@ body {
   display: flex;
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 0;
+  padding-right: 1.5rem;
 }
 .kiru-testi-card {
   min-width: calc(50% - 16px);
@@ -1702,7 +1711,7 @@ body {
     padding 0.25s;
 }
 .kiru-faq-item.open .kiru-faq-a {
-  max-height: 300px;
+  max-height: 500px;
   padding: 0 20px 20px;
 }
 .kiru-faq-a p {

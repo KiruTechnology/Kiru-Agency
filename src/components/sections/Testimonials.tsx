@@ -6,9 +6,17 @@ export function Testimonials() {
   const trackRef = useRef<HTMLDivElement>(null);
   const VISIBLE = 2;
 
-  const max = testimonials.length - VISIBLE;
-  const slide = (dir: number) =>
-    setIdx((i) => Math.min(max, Math.max(0, i + dir)));
+  // Max index where we can still show VISIBLE cards
+  // With 5 cards and VISIBLE=2: max=3 (shows cards 3,4)
+  const totalCards = testimonials.length + 1;
+  const maxIdx = Math.max(0, totalCards - VISIBLE);
+
+  const slide = (dir: number) => {
+    setIdx((i) => {
+      const newIdx = i + dir;
+      return Math.max(0, Math.min(maxIdx, newIdx));
+    });
+  };
 
   useEffect(() => {
     if (!trackRef.current) return;
@@ -47,7 +55,7 @@ export function Testimonials() {
             <button
               className="kiru-testi-btn"
               onClick={() => slide(1)}
-              disabled={idx >= max}
+              disabled={idx >= maxIdx}
             >
               →
             </button>

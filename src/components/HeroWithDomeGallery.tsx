@@ -1,112 +1,11 @@
-/**
- * HeroWithDomeGallery.tsx
- *
- * DROP-IN replacement for the Hero section in KiruTech.tsx
- *
- * SETUP — run these first:
- *   bun add gsap
- *   bun x --bun shadcn@latest add @react-bits/DomeGallery-TS-TW
- *
- * Then in your main entry (main.tsx) make sure you have:
- *   import "./index.css"   ← Tailwind base styles
- *
- * HOW THE ANIMATION WORKS:
- *   1. The hero wrapper is made tall (200vh) so there's room to scroll
- *      while the hero panel stays sticky (pinned) at the top.
- *   2. GSAP ScrollTrigger scrubs the hero content — it fades out,
- *      scales down slightly, and blurs — exactly like GitHub's hero.
- *   3. The DomeGallery section starts BELOW the viewport and slides
- *      up with a clip-path reveal as the hero fades, creating the
- *      "next section swallows the hero" effect.
- *   4. Once the scroll pin releases, normal page scroll resumes.
- */
-
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import DomeGallery from "./DomeGallery"; // adjust path after CLI install
+import DomeGallery from "./DomeGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─────────────────────────────────────────────────────────────
-   DOME GALLERY IMAGES
-   These are the images that will appear in the 3-D dome.
-   For a software/product engineering agency like Kiru Tech,
-   use a mix of:
-     • Project screenshots / mockups (your best work)
-     • Tech stack logos on dark cards
-     • Team candid shots (builds trust)
-     • "Behind the screen" dev/design process shots
-   See the full curation guide in the comments below.
-───────────────────────────────────────────────────────────── */
-
-/*
- ╔══════════════════════════════════════════════════════════╗
- ║          DOME GALLERY — WHAT TO PUT IN IT               ║
- ║                                                          ║
- ║  The dome is a 3-D curved grid of draggable image cards. ║
- ║  For Kiru Tech you want ~12–20 images that tell the      ║
- ║  story of what you build and who you are. Split them     ║
- ║  across these 4 buckets:                                 ║
- ║                                                          ║
- ║  1. PRODUCT SCREENSHOTS (6–8 images)                     ║
- ║     Dark-themed UI screenshots of actual or mockup       ║
- ║     projects — dashboards, mobile apps, landing pages.   ║
- ║     These are the most compelling. Dark bg looks         ║
- ║     stunning in the dome against the dark site theme.    ║
- ║     Examples:                                            ║
- ║       • FlowBoard analytics dashboard screenshot         ║
- ║       • Pulse Health app on iPhone mockup                ║
- ║       • NexaOS workspace screenshot                      ║
- ║       • A mobile onboarding screen                       ║
- ║       • An API docs page                                 ║
- ║       • A design system / component library view         ║
- ║                                                          ║
- ║  2. TECH STACK CARDS (4–6 images)                        ║
- ║     Simple dark cards with a big centered logo/icon.     ║
- ║     Create them as 800×600 PNGs in Figma — dark bg       ║
- ║     (#0d1117), centered white/colored logo.              ║
- ║     Examples:                                            ║
- ║       • React logo card                                  ║
- ║       • Go / Rust / Node card                            ║
- ║       • AWS / GCP card                                   ║
- ║       • PostgreSQL / Redis card                          ║
- ║       • Docker / Kubernetes card                         ║
- ║       • Figma / design tools card                        ║
- ║                                                          ║
- ║  3. PROCESS / BEHIND-THE-SCENES (2–4 images)             ║
- ║     Real team photos or stylised illustrations of        ║
- ║     the work process — builds authenticity.              ║
- ║     Examples:                                            ║
- ║       • Team whiteboarding a product architecture        ║
- ║       • Close-up of a keyboard + code on screen          ║
- ║       • Figma design file open on a large monitor        ║
- ║       • A Zoom call with a client visible                ║
- ║                                                          ║
- ║  4. OUTCOME / METRICS CARDS (2–4 images)                 ║
- ║     Dark cards with a big number + short label.          ║
- ║     Creates social proof even inside the gallery.        ║
- ║     Examples:                                            ║
- ║       • "340%" with "User retention ↑"                   ║
- ║       • "4.9★" with "App Store Rating"                   ║
- ║       • "$2M ARR" with "Client milestone"                ║
- ║       • "8 weeks" with "MVP to launch"                   ║
- ║                                                          ║
- ║  TECHNICAL TIPS:                                         ║
- ║    • Ideal aspect ratio: 4:3 or 16:9 (landscape)         ║
- ║    • Minimum size: 800×600px                             ║
- ║    • Format: WebP for performance                        ║
- ║    • Keep file size under 200kb each                     ║
- ║    • Dark images look best — avoid white backgrounds     ║
- ║    • The `grayscale` prop is ON below — images show      ║
- ║      in greyscale and pop to color on hover/drag.        ║
- ║      This gives the dome a premium editorial feel.       ║
- ╚══════════════════════════════════════════════════════════╝
-*/
-
 const DOME_IMAGES = [
-  // ── Replace these with your actual image paths / URLs ──
-  // Product screenshots
   {
     src: "/assets/projects/flowboard-dashboard.webp",
     alt: "FlowBoard Analytics",
@@ -116,24 +15,18 @@ const DOME_IMAGES = [
     alt: "Pulse Health Tracker",
   },
   { src: "/assets/projects/nexaos-workspace.webp", alt: "NexaOS Workspace" },
-  {
-    src: "/assets/projects/mobile-onboarding.webp",
-    alt: "Mobile Onboarding",
-  },
+  { src: "/assets/projects/mobile-onboarding.webp", alt: "Mobile Onboarding" },
   { src: "/assets/projects/api-docs.webp", alt: "API Documentation" },
   { src: "/assets/projects/design-system.webp", alt: "Design System" },
-  // Tech stack cards (create as dark PNG/WebP in Figma)
   { src: "/assets/stack/react-card.webp", alt: "React" },
   { src: "/assets/stack/go-card.webp", alt: "Go" },
   { src: "/assets/stack/aws-card.webp", alt: "AWS" },
   { src: "/assets/stack/postgres-card.webp", alt: "PostgreSQL" },
   { src: "/assets/stack/docker-card.webp", alt: "Docker" },
   { src: "/assets/stack/figma-card.webp", alt: "Figma" },
-  // Process shots
   { src: "/assets/team/whiteboard.webp", alt: "Architecture planning" },
   { src: "/assets/team/coding.webp", alt: "Deep in the code" },
   { src: "/assets/team/design-review.webp", alt: "Design review" },
-  // Outcome cards (create as dark PNG/WebP in Figma)
   {
     src: "/assets/outcomes/retention-card.webp",
     alt: "340% retention increase",
@@ -143,90 +36,101 @@ const DOME_IMAGES = [
   { src: "/assets/outcomes/speed-card.webp", alt: "8 weeks to launch" },
 ];
 
-/* ─────────────────────────────────────────────────────────────
-   HERO + DOME GALLERY SECTION
-───────────────────────────────────────────────────────────── */
 export function HeroWithDomeGallery() {
-  const wrapperRef = useRef<HTMLDivElement>(null); // tall scroll container
-  const heroRef = useRef<HTMLDivElement>(null); // sticky hero panel
-  const heroContentRef = useRef<HTMLDivElement>(null); // hero inner (fades out)
-  const domeRef = useRef<HTMLDivElement>(null); // dome section (slides up)
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const heroContentRef = useRef<HTMLDivElement>(null);
+  const domeRef = useRef<HTMLDivElement>(null);
+  const domeInnerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      /* ── 1. Pin the hero inside its tall wrapper ── */
+      // ── 1. Pin the hero inside the tall wrapper ──────────────────────
       ScrollTrigger.create({
         trigger: wrapperRef.current,
         start: "top top",
-        end: "bottom top", // pin for 100vh of scroll
+        end: "bottom top",
         pin: heroRef.current,
         pinSpacing: false,
         anticipatePin: 1,
       });
 
-      /* ── 2. Fade + scale + blur the hero content as user scrolls ── */
+      // ── 2. Fade + scale + blur the hero TEXT ─────────────────────────
+      // Starts immediately, completes by 55% scroll through the wrapper.
+      // This matches GitHub: text is fully gone before the canvas arrives.
       gsap.to(heroContentRef.current, {
         opacity: 0,
-        scale: 0.94,
-        filter: "blur(8px)",
-        y: -40,
+        scale: 0.92,
+        filter: "blur(12px)",
+        y: -48,
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: wrapperRef.current,
           start: "top top",
-          end: "60% top",
-          scrub: 1.2, // smooth scrub tied to scroll position
+          end: "55% top", // text done by 55%
+          scrub: 1.4,
         },
       });
 
-      /* ── 3. Slide the dome section up over the hero ── */
+      // ── 3. Dome reveal — starts AFTER hero text is well on its way out ─
+      // FIX: was "top top" (simultaneous). Now "35% top" — dome only
+      // begins appearing once the hero is already 64% faded.
+      // Uses opacity + scale instead of clip-path wipe so it feels like
+      // the dome is materialising through the hero, not wiping up from below.
       gsap.fromTo(
         domeRef.current,
         {
-          clipPath: "inset(100% 0% 0% 0% round 24px 24px 0 0)",
-          y: 0,
+          opacity: 0,
+          scale: 0.96,
+          // Keep clip-path for the rounded-top-corners entrance shape,
+          // but start it almost fully revealed so the main reveal is opacity.
+          clipPath: "inset(8% 0% 0% 0% round 32px 32px 0 0)",
         },
         {
+          opacity: 1,
+          scale: 1,
           clipPath: "inset(0% 0% 0% 0% round 0px)",
-          y: 0,
-          ease: "power2.inOut",
+          ease: "power3.inOut",
           scrollTrigger: {
             trigger: wrapperRef.current,
-            start: "top top", // dome starts appearing immediately with hero fade
-            end: "85% top", // fully visible before wrapper ends
-            scrub: 1.2,
+            start: "35% top", // ← KEY FIX: dome starts after text is 64% faded
+            end: "90% top",
+            scrub: 1.4,
           },
         },
       );
 
-      /* ── 4. Fade in dome content text after dome is visible ── */
+      // ── 4. Dome content text fades in after dome is visible ───────────
       gsap.fromTo(
-        ".dome-content-inner",
-        { opacity: 0, y: 32 },
+        domeInnerRef.current,
+        { opacity: 0, y: 28 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: domeRef.current,
-            start: "top 80%",
+            trigger: wrapperRef.current,
+            start: "65% top",
             toggleActions: "play none none reverse",
           },
         },
       );
     });
 
-    return () => ctx.revert(); // cleanup GSAP context on unmount
+    return () => ctx.revert();
   }, []);
 
   return (
     <>
-      {/* ══════════════════════════════════════════════════
-          SCROLL CONTAINER — 200vh gives room to scrub
-      ══════════════════════════════════════════════════ */}
-      <div ref={wrapperRef} style={{ height: "200vh", position: "relative" }}>
-        {/* HERO PANEL — sticky, full viewport */}
+      {/*
+        ════════════════════════════════════════════════════════
+        SCROLL CONTAINER — 260vh (extra 60vh vs original 200vh
+        so the dome has breathing room before pin releases)
+        ════════════════════════════════════════════════════════
+      */}
+      <div ref={wrapperRef} style={{ height: "260vh", position: "relative" }}>
+        {/* ── HERO PANEL (sticky) ────────────────────────────────────── */}
         <div
           ref={heroRef}
           style={{
@@ -235,12 +139,21 @@ export function HeroWithDomeGallery() {
             height: "100vh",
             width: "100%",
             overflow: "hidden",
-            background: "var(--bg)",
+            // FIX: no background here — aurora is rendered at wrapper level
+            // so it shows through both hero AND dome seamlessly.
+            background: "transparent",
             zIndex: 1,
           }}
         >
-          {/* Aurora background */}
-          <div className="kiru-hero-bg" />
+          {/*
+            AURORA BACKGROUND — rendered once, visible through both layers.
+            Because both heroRef and domeRef sit inside wrapperRef and the
+            dome is transparent, this single aurora covers the full transition.
+          */}
+          <div
+            className="kiru-hero-bg"
+            style={{ position: "absolute", inset: 0, zIndex: 0 }}
+          />
 
           {/* Floating particles */}
           {[
@@ -271,7 +184,7 @@ export function HeroWithDomeGallery() {
             />
           ))}
 
-          {/* Hero content — this is what GSAP fades out */}
+          {/* Hero content — GSAP fades this out on scroll */}
           <div
             ref={heroContentRef}
             style={{
@@ -283,8 +196,9 @@ export function HeroWithDomeGallery() {
               maxWidth: "var(--max)",
               margin: "0 auto",
               padding: "0 40px",
-              paddingTop: "64px", // navbar height
+              paddingTop: "64px",
               width: "100%",
+              zIndex: 1,
             }}
           >
             <div style={{ maxWidth: 640, textAlign: "center" }}>
@@ -306,7 +220,7 @@ export function HeroWithDomeGallery() {
               {/* Subtext */}
               <p className="kiru-hero-sub">
                 From idea to product — we design, develop, and launch
-                hikiru-quality software built for growth.
+                kiru-quality software built for growth.
               </p>
 
               {/* CTAs */}
@@ -344,6 +258,7 @@ export function HeroWithDomeGallery() {
               flexDirection: "column",
               alignItems: "center",
               gap: 8,
+              zIndex: 1,
             }}
           >
             <span
@@ -368,38 +283,39 @@ export function HeroWithDomeGallery() {
             />
           </div>
         </div>
+        {/* end sticky hero */}
 
-        {/* DOME SECTION — slides up over hero */}
+        {/*
+          ── DOME SECTION ───────────────────────────────────────────────
+          FIX: `background: transparent` — no competing bg, no border-top.
+          The hero's aurora shines through, making dome + hero one surface.
+          Positioned absolute so it overlaps the pinned hero as it appears.
+        */}
         <div
           ref={domeRef}
           id="work-dome"
           style={{
             position: "absolute",
-            top: "100vh", // starts just below hero
+            top: "100vh",
             left: 0,
             right: 0,
             minHeight: "100vh",
-            background: "var(--bg)",
+            background: "transparent", // ← KEY FIX: was "var(--bg)"
             zIndex: 2,
-            clipPath: "inset(100% 0% 0% 0% round 24px 24px 0 0)", // starts hidden
-            willChange: "clip-path",
-            borderTop: "1px solid var(--border)",
+            opacity: 0, // GSAP controls this
+            willChange: "opacity, transform, clip-path",
+            // No borderTop — seamless with hero aurora below
           }}
         >
-          {/* Aurora background — same as hero */}
-          <div
-            className="kiru-hero-bg"
-            style={{ position: "absolute", inset: 0, zIndex: 0 }}
-          />
           {/* Section header */}
           <div
-            className="dome-content-inner"
+            ref={domeInnerRef}
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "80px 40px 32px",
+              padding: "64px 40px 24px",
               textAlign: "center",
-              opacity: 0, // faded in by GSAP
+              opacity: 0,
               position: "relative",
               zIndex: 1,
             }}
@@ -412,14 +328,14 @@ export function HeroWithDomeGallery() {
             </h2>
             <p
               className="kiru-section-sub"
-              style={{ margin: "0 auto 16px", textAlign: "center" }}
+              style={{ margin: "0 auto 12px", textAlign: "center" }}
             >
               Drag to explore — a curated view of interfaces, tools, and systems
               we've built for clients across Africa and beyond.
             </p>
             <p
               style={{
-                fontSize: ".75rem",
+                fontSize: ".72rem",
                 color: "var(--text-muted)",
                 fontStyle: "italic",
                 letterSpacing: ".04em",
@@ -453,11 +369,11 @@ export function HeroWithDomeGallery() {
                 images={DOME_IMAGES}
                 fit={0.8}
                 minRadius={600}
-                maxVerticalRotationDeg={25} // allow slight vertical tilt
+                maxVerticalRotationDeg={25}
                 segments={34}
                 dragDampening={2}
-                grayscale // greyscale → color on hover (premium feel)
-                overlayBlurColor="transparent" // Show the aurora background
+                grayscale
+                overlayBlurColor="transparent"
               />
             </div>
           </div>
@@ -467,7 +383,7 @@ export function HeroWithDomeGallery() {
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "32px 40px 80px",
+              padding: "24px 40px 80px",
               display: "flex",
               justifyContent: "center",
               gap: 16,
@@ -485,7 +401,7 @@ export function HeroWithDomeGallery() {
           </div>
         </div>
       </div>
-      {/* end 200vh wrapper */}
+      {/* end 260vh wrapper */}
 
       {/* Spacer so the rest of the page renders below the dome */}
       <div
