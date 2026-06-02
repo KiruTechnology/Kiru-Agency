@@ -53,27 +53,6 @@ export function FAQ() {
               <a href="#contact">Let's talk →</a>
             </p>
           </div>
-
-          {/* <div className="kiru-faq-list">
-            {faqs.map((f, i) => (
-              <div
-                key={f.q}
-                className={`kiru-faq-item reveal-up${open === i ? " open" : ""}`}
-                style={{ transitionDelay: `${i * 60}ms` }}
-              >
-                <button
-                  className="kiru-faq-q"
-                  onClick={() => setOpen(open === i ? null : i)}
-                >
-                  {f.q}
-                  <span className="kiru-faq-arrow">↓</span>
-                </button>
-                <div className="kiru-faq-a">
-                  <p>{f.a}</p>
-                </div>
-              </div>
-            ))}
-          </div> */}
           <div className="kiru-faq-list">
             {faqs.map((f, i) => (
               <div

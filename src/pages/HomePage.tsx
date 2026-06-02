@@ -1,4 +1,3 @@
-// import FloatingCTA from "../components/FloatingCTA";
 import { HeroWithDomeGallery } from "../components/HeroWithDomeGallery";
 import {
   StatsStrip,
@@ -18,8 +17,7 @@ export function HomePage() {
   return (
     <>
       <HeroWithDomeGallery />
-      <StatsStrip />
-      <Features />
+      <StatsStrip /> <Features />
       <Services />
       <Process />
       <Work />

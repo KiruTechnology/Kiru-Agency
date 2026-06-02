@@ -516,7 +516,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 64px;
+  padding-top: 2rem;
   overflow: hidden;
 }
 

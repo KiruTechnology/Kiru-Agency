@@ -5,27 +5,6 @@ import DomeGallery from "./DomeGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * DOME_IMAGES — Optimized for fast loading & crisp quality
- *
- * Image Requirements:
- * - Format: WebP (25-35% smaller than JPG, better quality than JPEG)
- * - Max Size: 150KB per image
- * - Quality: 85-95 (balance quality with file size)
- *
- * Lazy Loading:
- * - DomeGallery renders images dynamically
- * - Browser automatically defers off-screen image loading
- * - Use DevTools Network tab to verify "lazy" behavior
- *
- * Folder Structure:
- * src/assets/projects/     (6 images)  — UI mockups, dashboards
- * src/assets/stack/        (6 images)  — Tech logo cards
- * src/assets/team/         (3 images)  — Team photos
- * src/assets/outcomes/     (4 images)  — Stats & milestone cards
- *
- * See IMAGE_OPTIMIZATION_GUIDE.md for detailed setup instructions.
- */
 const DOME_IMAGES = [
   {
     src: "/assets/projects/flowboard-dashboard.webp",
@@ -102,7 +81,7 @@ export function HeroWithDomeGallery() {
         domeRef.current,
         {
           opacity: 0,
-          scale: 0.96,
+          scale: 0.85,
           // Keep clip-path for the rounded-top-corners entrance shape,
           // but start it almost fully revealed so the main reveal is opacity.
           clipPath: "inset(8% 0% 0% 0% round 32px 32px 0 0)",
@@ -115,8 +94,8 @@ export function HeroWithDomeGallery() {
           scrollTrigger: {
             trigger: wrapperRef.current,
             start: "20% top", // ← Dome appears earlier, creates snappy reveal
-            end: "65% top", // ← Faster animation for punchier effect
-            scrub: 1.4,
+            end: "50% top", // ← Faster animation for punchier effect
+            scrub: 1.35,
           },
         },
       );
@@ -144,14 +123,8 @@ export function HeroWithDomeGallery() {
 
   return (
     <>
-      {/*
-        ════════════════════════════════════════════════════════
-        SCROLL CONTAINER — 260vh (extra 60vh vs original 200vh
-        so the dome has breathing room before pin releases)
-        ════════════════════════════════════════════════════════
-      */}
-      <div ref={wrapperRef} style={{ height: "260vh", position: "relative" }}>
-        {/* ── HERO PANEL (sticky) ────────────────────────────────────── */}
+      <div ref={wrapperRef} style={{ height: "180vh", position: "relative" }}>
+        {/* ── HERO PANEL (sticky) */}
         <div
           ref={heroRef}
           style={{
@@ -160,8 +133,6 @@ export function HeroWithDomeGallery() {
             height: "100vh",
             width: "100%",
             overflow: "hidden",
-            // FIX: no background here — aurora is rendered at wrapper level
-            // so it shows through both hero AND dome seamlessly.
             background: "transparent",
             zIndex: 1,
           }}
@@ -279,7 +250,7 @@ export function HeroWithDomeGallery() {
               flexDirection: "column",
               alignItems: "center",
               gap: 8,
-              zIndex: 1,
+              zIndex: 0,
             }}
           >
             <span
@@ -304,14 +275,9 @@ export function HeroWithDomeGallery() {
             />
           </div>
         </div>
-        {/* end sticky hero */}
 
-        {/*
-          ── DOME SECTION ───────────────────────────────────────────────
-          FIX: `background: transparent` — no competing bg, no border-top.
-          The hero's aurora shines through, making dome + hero one surface.
-          Positioned absolute so it overlaps the pinned hero as it appears.
-        */}
+        {/*    ── DOME SECTION ──  */}
+
         <div
           ref={domeRef}
           id="work-dome"
@@ -321,11 +287,10 @@ export function HeroWithDomeGallery() {
             left: 0,
             right: 0,
             minHeight: "100vh",
-            background: "transparent", // ← KEY FIX: was "var(--bg)"
+            background: "transparent",
             zIndex: 2,
             opacity: 0, // GSAP controls this
             willChange: "opacity, transform, clip-path",
-            // No borderTop — seamless with hero aurora below
           }}
         >
           {/* Section header */}
@@ -336,7 +301,7 @@ export function HeroWithDomeGallery() {
               margin: "0 auto",
               padding: "64px 40px 24px",
               textAlign: "center",
-              opacity: 0,
+              opacity: 1,
               position: "relative",
               zIndex: 1,
             }}
@@ -347,13 +312,6 @@ export function HeroWithDomeGallery() {
             <h2 className="kiru-section-title" style={{ marginBottom: 12 }}>
               Products We've Shipped
             </h2>
-            <p
-              className="kiru-section-sub"
-              style={{ margin: "0 auto 12px", textAlign: "center" }}
-            >
-              Drag to explore — a curated view of interfaces, tools, and systems
-              we've built for clients across Africa and beyond.
-            </p>
             <p
               style={{
                 fontSize: ".72rem",
@@ -381,7 +339,7 @@ export function HeroWithDomeGallery() {
             <div
               style={{
                 width: "100%",
-                height: "100%",
+                height: "93%",
                 transform: "scale(0.9)",
                 transformOrigin: "center",
               }}
@@ -404,7 +362,7 @@ export function HeroWithDomeGallery() {
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "24px 40px 24px",
+              padding: "2rem 3rem 2rem",
               display: "flex",
               justifyContent: "center",
               gap: 16,
@@ -422,7 +380,6 @@ export function HeroWithDomeGallery() {
           </div>
         </div>
       </div>
-      {/* end 260vh wrapper */}
     </>
   );
 }
