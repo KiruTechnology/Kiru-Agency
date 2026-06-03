@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DomeGallery from "./DomeGallery";
+import { DiAppcelerator, DiReact } from "react-icons/di";
+import { ChevronDownIcon, GlobeAltIcon } from "@heroicons/react/24/solid";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,6 +74,22 @@ export function HeroWithDomeGallery() {
         },
       });
 
+      // ── 2b. Fade out the AURORA BACKGROUND with the hero text ────────
+      // This ensures the aurora doesn't persist after the hero section ends.
+      const auroraElement = heroRef.current?.querySelector(".kiru-hero-bg");
+      if (auroraElement) {
+        gsap.to(auroraElement, {
+          opacity: 0,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: "top top",
+            end: "55% top",
+            scrub: 1.4,
+          },
+        });
+      }
+
       // ── 3. Dome reveal — starts AFTER hero text is well on its way out ─
       // FIX: was "top top" (simultaneous). Now "35% top" — dome only
       // begins appearing once the hero is already 64% faded.
@@ -123,16 +141,23 @@ export function HeroWithDomeGallery() {
 
   return (
     <>
-      <div ref={wrapperRef} style={{ height: "180vh", position: "relative" }}>
+      <div
+        ref={wrapperRef}
+        style={{
+          height: "195dvh",
+          position: "relative",
+          // overflow: "hidden",
+        }}
+      >
         {/* ── HERO PANEL (sticky) */}
         <div
           ref={heroRef}
           style={{
             position: "sticky",
             top: 0,
-            height: "100vh",
+            height: "30%",
             width: "100%",
-            overflow: "hidden",
+            // overflow: "hidden",
             background: "transparent",
             zIndex: 1,
           }}
@@ -188,12 +213,12 @@ export function HeroWithDomeGallery() {
               maxWidth: "var(--max)",
               margin: "0 auto",
               padding: "0 40px",
-              paddingTop: "64px",
               width: "100%",
               zIndex: 1,
+              height: "95dvh",
             }}
           >
-            <div style={{ maxWidth: 640, textAlign: "center" }}>
+            <div style={{ maxWidth: "70rem", textAlign: "center" }}>
               {/* Eyebrow */}
               <div className="kiru-eyebrow" style={{ marginBottom: 24 }}>
                 <div className="kiru-eyebrow-dot" />
@@ -204,7 +229,7 @@ export function HeroWithDomeGallery() {
               <h1 className="kiru-hero-title">
                 We Build
                 <br />
-                <span className="gradient-word">Software</span>
+                <span className="gradient-word">Software </span>
                 <br />
                 That Scales.
               </h1>
@@ -228,7 +253,12 @@ export function HeroWithDomeGallery() {
               {/* Social proof */}
               <div className="kiru-hero-social-proof">
                 <div className="kiru-avatars">
-                  {["👤", "👤", "👤", "👤"].map((a, i) => (
+                  {[
+                    <DiReact />,
+                    "👤",
+                    <GlobeAltIcon />,
+                    <DiAppcelerator />,
+                  ].map((a, i) => (
                     <span key={i}>{a}</span>
                   ))}
                 </div>
@@ -242,10 +272,6 @@ export function HeroWithDomeGallery() {
           {/* Scroll hint */}
           <div
             style={{
-              position: "absolute",
-              bottom: 32,
-              left: "50%",
-              transform: "translateX(-50%)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -253,29 +279,25 @@ export function HeroWithDomeGallery() {
               zIndex: 0,
             }}
           >
-            <span
+            <div
               style={{
+                position: "absolute",
+                bottom: "-2rem",
+                left: "50%",
+                transform: "translateX(-50%)",
                 fontSize: ".7rem",
                 fontWeight: 600,
                 letterSpacing: ".1em",
                 textTransform: "uppercase",
                 color: "var(--text-muted)",
+                textWrap: "nowrap",
               }}
             >
-              Scroll to explore
-            </span>
-            <div
-              style={{
-                width: 1,
-                height: 48,
-                background:
-                  "linear-gradient(180deg, var(--border), transparent)",
-                animation: "float-particle 2s ease-in-out infinite",
-              }}
-            />
+              Explore more
+              <ChevronDownIcon className="animate-bounce font-[.7rem]!" />
+            </div>
           </div>
         </div>
-
         {/*    ── DOME SECTION ──  */}
 
         <div
@@ -286,11 +308,12 @@ export function HeroWithDomeGallery() {
             top: "100vh",
             left: 0,
             right: 0,
-            minHeight: "100vh",
+            height: "80vh",
             background: "transparent",
             zIndex: 2,
-            opacity: 0, // GSAP controls this
+            opacity: 0,
             willChange: "opacity, transform, clip-path",
+            overflow: "hidden",
           }}
         >
           {/* Section header */}
@@ -299,7 +322,7 @@ export function HeroWithDomeGallery() {
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "64px 40px 24px",
+              padding: "32px 40px 12px",
               textAlign: "center",
               opacity: 1,
               position: "relative",
@@ -328,7 +351,7 @@ export function HeroWithDomeGallery() {
           <div
             style={{
               width: "100vw",
-              height: "80vh",
+              height: "70vh",
               position: "relative",
               zIndex: 1,
               display: "flex",
@@ -339,8 +362,8 @@ export function HeroWithDomeGallery() {
             <div
               style={{
                 width: "100%",
-                height: "93%",
-                transform: "scale(0.9)",
+                height: "100%",
+                transform: "scale(0.85)",
                 transformOrigin: "center",
               }}
             >
@@ -362,7 +385,7 @@ export function HeroWithDomeGallery() {
             style={{
               maxWidth: "var(--max)",
               margin: "0 auto",
-              padding: "2rem 3rem 2rem",
+              padding: "1rem 3rem",
               display: "flex",
               justifyContent: "center",
               gap: 16,

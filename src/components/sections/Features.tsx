@@ -34,7 +34,7 @@ export function Features() {
   ];
 
   return (
-    <section className="kiru-section gh-features" id="features">
+    <section className="kiru-section kiru-features z-30" id="features">
       <div className="kiru-inner">
         <div className="reveal-up">
           <div className="kiru-overline">Why Kiru Tech</div>

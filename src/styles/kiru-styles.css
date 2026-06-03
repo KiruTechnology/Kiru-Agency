@@ -526,6 +526,7 @@ body {
   inset: 0;
   z-index: 0;
   background: #000814;
+  height: 140dvh;
 }
 .kiru-hero-bg::before {
   content: "";
@@ -740,11 +741,77 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 80% 60% at 50% 50%,
-    rgba(88, 166, 255, 0.04) 0%,
-    transparent 60%
-  );
+  background:
+    radial-gradient(
+      ellipse 150% 100% at 30% 20%,
+      rgba(0, 255, 200, 0.15) 0%,
+      rgba(0, 200, 150, 0.08) 30%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 120% 80% at 70% 30%,
+      rgba(100, 200, 255, 0.12) 0%,
+      rgba(50, 150, 255, 0.06) 40%,
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 140% 90% at 50% 60%,
+      rgba(150, 100, 255, 0.1) 0%,
+      rgba(100, 50, 200, 0.05) 35%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 130% 110% at 10% 50%,
+      rgba(0, 220, 180, 0.1) 0%,
+      rgba(0, 150, 120, 0.04) 50%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 110% 100% at 85% 70%,
+      rgba(100, 255, 200, 0.08) 0%,
+      rgba(50, 200, 150, 0.03) 60%,
+      transparent 85%
+    );
+  background-size:
+    200% 200%,
+    200% 200%,
+    200% 200%,
+    200% 200%,
+    200% 200%;
+  background-position:
+    0% 0%,
+    50% 50%,
+    100% 0%,
+    0% 100%,
+    50% 50%;
+  animation: aurora-flow 15s ease-in-out infinite;
+}
+
+@keyframes aurora-flow {
+  0% {
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 0%,
+      0% 100%,
+      50% 50%;
+  }
+  50% {
+    background-position:
+      100% 100%,
+      0% 0%,
+      50% 50%,
+      100% 0%,
+      0% 100%;
+  }
+  100% {
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 0%,
+      0% 100%,
+      50% 50%;
+  }
 }
 
 /* hero grid overlay line */
@@ -784,7 +851,7 @@ body {
   z-index: 1;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 40px;
+  /* padding: 0 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -798,7 +865,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 0.5rem 1rem;
   background: rgba(88, 166, 255, 0.08);
   border: 1px solid rgba(88, 166, 255, 0.2);
   border-radius: 999px;
@@ -825,7 +892,7 @@ body {
   letter-spacing: -0.04em;
   color: var(--text-primary);
   margin-bottom: 24px;
-  max-width: 800px;
+  max-width: 90rem;
 }
 .kiru-hero-title .gradient-word {
   background: linear-gradient(135deg, #58a6ff 0%, #a371f7 50%, #3fb950 100%);
@@ -835,6 +902,7 @@ body {
   background-clip: text;
   animation: gradient-text 4s ease infinite;
   display: inline-block;
+  padding-inline: 0.5rem;
 }
 
 .kiru-hero-sub {
@@ -842,6 +910,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.7;
   max-width: 600px;
+  display: inline-flex;
   margin-bottom: 36px;
 }
 .kiru-hero-actions {
@@ -854,7 +923,7 @@ body {
 
 .kiru-hero-social-proof {
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 12px;
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -979,6 +1048,7 @@ body {
 ═══════════════════════════════════════════ */
 .kiru-features {
   background: var(--bg);
+  z-index: 12;
 }
 .kiru-bento {
   display: grid;
