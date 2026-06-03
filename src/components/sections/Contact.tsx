@@ -7,6 +7,10 @@ import {
   IconPhone,
   IconX,
 } from "../icons/ContactIcons";
+import img1 from "../../assets/3f42e1a373db29e9339c1a3443e1e146.webp";
+import img2 from "../../assets/abfc3841d1e383be62397c3f589a9150.webp";
+import img3 from "../../assets/c507814898a421b2909393b5ade98e2c.webp";
+
 const FETile = () => <div style={{ width: 1, height: 1, display: "none" }} />;
 
 export function Contact() {
@@ -179,8 +183,19 @@ export function Contact() {
             )}
             <div className="kiru-form-trust-bottom">
               <div className="kiru-trust-avatars">
-                {["👤", "👤", "👤", "👤"].map((a, i) => (
-                  <span key={i}>{a}</span>
+                {[img1, img2, img3, img1].map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt="Team member"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "1px solid var(--border)",
+                    }}
+                  />
                 ))}
               </div>
               <div className="kiru-trust-meta">

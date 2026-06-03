@@ -69,12 +69,25 @@ export function Testimonials() {
                 <div className="kiru-testi-quote">"</div>
                 <p className="kiru-testi-body">{t.body}</p>
                 <div className="kiru-testi-author">
-                  <div
-                    className="kiru-testi-avatar"
-                    style={{ background: t.bg }}
-                  >
-                    {t.initials}
-                  </div>
+                  {t.image ? (
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  ) : (
+                    <div
+                      className="kiru-testi-avatar"
+                      style={{ background: t.bg }}
+                    >
+                      {t.initials}
+                    </div>
+                  )}
                   <div>
                     <strong>{t.name}</strong>
                     <span>{t.role}</span>

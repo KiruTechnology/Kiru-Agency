@@ -27,6 +27,11 @@ import {
   SiFigma,
 } from "react-icons/si";
 
+// Import avatar images
+import img1 from "../assets/3f42e1a373db29e9339c1a3443e1e146.webp";
+import img2 from "../assets/abfc3841d1e383be62397c3f589a9150.webp";
+import img3 from "../assets/c507814898a421b2909393b5ade98e2c.webp";
+
 // service terms Data
 export const ServiceTerms = [
   {
@@ -1022,6 +1027,7 @@ export const testimonials = [
     name: "Amara Osei",
     role: "CEO, TradeLink Africa",
     body: "Kiru Tech didn't just write code — they thought about our product like co-founders. We launched in 8 weeks and our users love it.",
+    image: img1,
   },
   {
     initials: "JM",
@@ -1029,6 +1035,7 @@ export const testimonials = [
     name: "James Muriuki",
     role: "CTO, PayEase Kenya",
     body: "The most transparent engineering team I've worked with. Daily updates, zero surprises, and the architecture they built scales beautifully.",
+    image: img2,
   },
   {
     initials: "SN",
@@ -1036,6 +1043,7 @@ export const testimonials = [
     name: "Sofia Ndungu",
     role: "Founder, GreenStack Labs",
     body: "We came with a napkin sketch. Kiru Tech came back with a fully designed MVP that raised our seed round. Unreal team.",
+    image: img3,
   },
   {
     initials: "DK",
@@ -1043,6 +1051,7 @@ export const testimonials = [
     name: "Daniel Kamau",
     role: "CTO, Lipa Later",
     body: "From day one they felt like part of our team. The quality of code, the communication, the speed — everything exceeded our expectations.",
+    image: img1,
   },
   {
     initials: "FO",
@@ -1050,6 +1059,7 @@ export const testimonials = [
     name: "Fatima Omar",
     role: "CEO, Savannah Pay",
     body: "We'd tried two other agencies before Kiru Tech. The difference in product thinking and delivery speed was night and day.",
+    image: img2,
   },
 ];
 

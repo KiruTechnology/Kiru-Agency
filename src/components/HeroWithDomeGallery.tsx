@@ -5,37 +5,49 @@ import DomeGallery from "./DomeGallery";
 import { DiAppcelerator, DiReact } from "react-icons/di";
 import { ChevronDownIcon, GlobeAltIcon } from "@heroicons/react/24/solid";
 
+// Import dome gallery images
+import projectFlow from "../assets/projects/flowboard-dashboard.webp";
+import projectPulse from "../assets/projects/pulse-health-app.webp";
+import projectNexaos from "../assets/projects/nexaos-workspace.webp";
+import projectMobile from "../assets/projects/mobile-onboarding.webp";
+import projectApi from "../assets/projects/api-docs.webp";
+import projectDesign from "../assets/projects/design-system.webp";
+import stackReact from "../assets/stack/react-card.webp";
+import stackGo from "../assets/stack/go-card.webp";
+import stackAws from "../assets/stack/aws-card.webp";
+import stackPostgres from "../assets/stack/postgres-card.webp";
+import stackDocker from "../assets/stack/docker-card.webp";
+import stackFigma from "../assets/stack/figma-card.webp";
+import teamWhiteboard from "../assets/team/whiteboard.webp";
+import teamCoding from "../assets/team/coding.webp";
+import teamDesignReview from "../assets/team/design-review.webp";
+import outcomeRetention from "../assets/outcomes/retention-card.webp";
+import outcomeAppstore from "../assets/outcomes/appstore-card.webp";
+import outcomeArr from "../assets/outcomes/arr-card.webp";
+import outcomeSpeed from "../assets/outcomes/speed-card.webp";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const DOME_IMAGES = [
-  {
-    src: "/assets/projects/flowboard-dashboard.webp",
-    alt: "FlowBoard Analytics",
-  },
-  {
-    src: "/assets/projects/pulse-health-app.webp",
-    alt: "Pulse Health Tracker",
-  },
-  { src: "/assets/projects/nexaos-workspace.webp", alt: "NexaOS Workspace" },
-  { src: "/assets/projects/mobile-onboarding.webp", alt: "Mobile Onboarding" },
-  { src: "/assets/projects/api-docs.webp", alt: "API Documentation" },
-  { src: "/assets/projects/design-system.webp", alt: "Design System" },
-  { src: "/assets/stack/react-card.webp", alt: "React" },
-  { src: "/assets/stack/go-card.webp", alt: "Go" },
-  { src: "/assets/stack/aws-card.webp", alt: "AWS" },
-  { src: "/assets/stack/postgres-card.webp", alt: "PostgreSQL" },
-  { src: "/assets/stack/docker-card.webp", alt: "Docker" },
-  { src: "/assets/stack/figma-card.webp", alt: "Figma" },
-  { src: "/assets/team/whiteboard.webp", alt: "Architecture planning" },
-  { src: "/assets/team/coding.webp", alt: "Deep in the code" },
-  { src: "/assets/team/design-review.webp", alt: "Design review" },
-  {
-    src: "/assets/outcomes/retention-card.webp",
-    alt: "340% retention increase",
-  },
-  { src: "/assets/outcomes/appstore-card.webp", alt: "4.9★ App Store" },
-  { src: "/assets/outcomes/arr-card.webp", alt: "$2M ARR milestone" },
-  { src: "/assets/outcomes/speed-card.webp", alt: "8 weeks to launch" },
+  { src: projectFlow, alt: "FlowBoard Analytics" },
+  { src: projectPulse, alt: "Pulse Health Tracker" },
+  { src: projectNexaos, alt: "NexaOS Workspace" },
+  { src: projectMobile, alt: "Mobile Onboarding" },
+  { src: projectApi, alt: "API Documentation" },
+  { src: projectDesign, alt: "Design System" },
+  { src: stackReact, alt: "React" },
+  { src: stackGo, alt: "Go" },
+  { src: stackAws, alt: "AWS" },
+  { src: stackPostgres, alt: "PostgreSQL" },
+  { src: stackDocker, alt: "Docker" },
+  { src: stackFigma, alt: "Figma" },
+  { src: teamWhiteboard, alt: "Architecture planning" },
+  { src: teamCoding, alt: "Deep in the code" },
+  { src: teamDesignReview, alt: "Design review" },
+  { src: outcomeRetention, alt: "340% retention increase" },
+  { src: outcomeAppstore, alt: "4.9★ App Store" },
+  { src: outcomeArr, alt: "$2M ARR milestone" },
+  { src: outcomeSpeed, alt: "8 weeks to launch" },
 ];
 
 export function HeroWithDomeGallery() {
@@ -44,6 +56,7 @@ export function HeroWithDomeGallery() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const domeRef = useRef<HTMLDivElement>(null);
   const domeInnerRef = useRef<HTMLDivElement>(null);
+  const chevronRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -89,6 +102,19 @@ export function HeroWithDomeGallery() {
           },
         });
       }
+
+      // ── 2c. Fade out the SCROLL HINT CHEVRON with the hero text ──────
+      // This ensures the chevron disappears as the user scrolls past hero.
+      gsap.to(chevronRef.current, {
+        opacity: 0,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: wrapperRef.current,
+          start: "top top",
+          end: "55% top",
+          scrub: 1.4,
+        },
+      });
 
       // ── 3. Dome reveal — starts AFTER hero text is well on its way out ─
       // FIX: was "top top" (simultaneous). Now "35% top" — dome only
@@ -144,7 +170,7 @@ export function HeroWithDomeGallery() {
       <div
         ref={wrapperRef}
         style={{
-          height: "195dvh",
+          height: "190dvh",
           position: "relative",
           // overflow: "hidden",
         }}
@@ -271,31 +297,39 @@ export function HeroWithDomeGallery() {
 
           {/* Scroll hint */}
           <div
+            ref={chevronRef}
             style={{
+              position: "absolute",
+              bottom: "-16rem",
+              left: "50%",
+              transform: "translateX(-50%)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               gap: 8,
-              zIndex: 0,
+              zIndex: -1,
+              pointerEvents: "none",
             }}
           >
-            <div
+            <span
               style={{
-                position: "absolute",
-                bottom: "-2rem",
-                left: "50%",
-                transform: "translateX(-50%)",
-                fontSize: ".7rem",
+                fontSize: ".65rem",
                 fontWeight: 600,
                 letterSpacing: ".1em",
                 textTransform: "uppercase",
                 color: "var(--text-muted)",
-                textWrap: "nowrap",
               }}
             >
-              Explore more
-              <ChevronDownIcon className="animate-bounce font-[.7rem]!" />
-            </div>
+              Scroll to explore
+            </span>
+            <ChevronDownIcon
+              style={{
+                width: "1.2rem",
+                height: "1.2rem",
+                opacity: 0.5,
+                animation: "bounce 2s infinite",
+              }}
+            />
           </div>
         </div>
         {/*    ── DOME SECTION ──  */}
@@ -305,10 +339,10 @@ export function HeroWithDomeGallery() {
           id="work-dome"
           style={{
             position: "absolute",
-            top: "100vh",
+            top: "100dvh",
             left: 0,
             right: 0,
-            height: "80vh",
+            height: "90dvh",
             background: "transparent",
             zIndex: 2,
             opacity: 0,
@@ -317,7 +351,7 @@ export function HeroWithDomeGallery() {
           }}
         >
           {/* Section header */}
-          <div
+          {/* <div
             ref={domeInnerRef}
             style={{
               maxWidth: "var(--max)",
@@ -345,13 +379,13 @@ export function HeroWithDomeGallery() {
             >
               ← Drag to rotate · Scroll inside to navigate →
             </p>
-          </div>
+          </div> */}
 
           {/* ── THE DOME GALLERY ── */}
           <div
             style={{
               width: "100vw",
-              height: "70vh",
+              height: "75dvh",
               position: "relative",
               zIndex: 1,
               display: "flex",
@@ -374,7 +408,7 @@ export function HeroWithDomeGallery() {
                 maxVerticalRotationDeg={25}
                 segments={34}
                 dragDampening={2}
-                grayscale
+                // grayscale
                 overlayBlurColor="transparent"
               />
             </div>
