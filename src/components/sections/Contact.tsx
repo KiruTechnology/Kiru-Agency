@@ -189,6 +189,7 @@ export function Contact() {
                     src={img}
                     alt="Team member"
                     style={{
+                      marginLeft: "-.3rem",
                       width: "32px",
                       height: "32px",
                       borderRadius: "50%",

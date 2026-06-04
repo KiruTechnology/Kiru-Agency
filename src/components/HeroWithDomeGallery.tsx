@@ -12,12 +12,21 @@ import projectNexaos from "../assets/projects/nexaos-workspace.webp";
 import projectMobile from "../assets/projects/mobile-onboarding.webp";
 import projectApi from "../assets/projects/api-docs.webp";
 import projectDesign from "../assets/projects/design-system.webp";
-import stackReact from "../assets/stack/react-card.webp";
-import stackGo from "../assets/stack/go-card.webp";
-import stackAws from "../assets/stack/aws-card.webp";
-import stackPostgres from "../assets/stack/postgres-card.webp";
+
+//import stackReact from "../assets/stack/react-card.webp";
+//import stackGo from "../assets/stack/go-card.webp";
+//import stackAws from "../assets/stack/aws-card.webp";
+//import stackPostgres from "../assets/stack/postgres-card.webp";
+//import stackDocker from "../assets/stack/docker-card.webp";
+//import stackFigma from "../assets/stack/figma-card.webp";
+
+import stackReact from "../assets/projects/design-system.webp";
+import stackGo from "../assets/kiru favicon.png";
+import stackAws from "../assets/projects/design-system.webp";
+import stackPostgres from "../assets/kiru logo1.png";
 import stackDocker from "../assets/stack/docker-card.webp";
 import stackFigma from "../assets/stack/figma-card.webp";
+
 import teamWhiteboard from "../assets/team/whiteboard.webp";
 import teamCoding from "../assets/team/coding.webp";
 import teamDesignReview from "../assets/team/design-review.webp";
@@ -172,7 +181,6 @@ export function HeroWithDomeGallery() {
         style={{
           height: "190dvh",
           position: "relative",
-          // overflow: "hidden",
         }}
       >
         {/* ── HERO PANEL (sticky) */}
@@ -181,9 +189,8 @@ export function HeroWithDomeGallery() {
           style={{
             position: "sticky",
             top: 0,
-            height: "30%",
+            height: "100%",
             width: "100%",
-            // overflow: "hidden",
             background: "transparent",
             zIndex: 1,
           }}
@@ -202,10 +209,13 @@ export function HeroWithDomeGallery() {
           {[
             { size: 3, x: 15, y: 25, dur: 7, delay: 0 },
             { size: 4, x: 80, y: 15, dur: 9, delay: 1.5 },
-            { size: 2, x: 60, y: 70, dur: 11, delay: 3 },
+            { size: 2, x: 60, y: 70, dur: 1, delay: 3 },
             { size: 5, x: 35, y: 55, dur: 8, delay: 0.5 },
             { size: 3, x: 90, y: 45, dur: 10, delay: 2 },
             { size: 2, x: 20, y: 80, dur: 13, delay: 4 },
+            { size: 4, x: 70, y: 5, dur: 9, delay: 1.5 },
+            { size: 2, x: 69, y: 37, dur: 11, delay: 3 },
+            { size: 3, x: 90, y: 65, dur: 10, delay: 2 },
           ].map((p, i) => (
             <div
               key={i}
@@ -265,7 +275,6 @@ export function HeroWithDomeGallery() {
                 From idea to product — we design, develop, and launch
                 kiru-quality software built for growth.
               </p>
-
               {/* CTAs */}
               <div className="kiru-hero-actions">
                 <a href="#contact" className="btn-green lg">
@@ -300,14 +309,14 @@ export function HeroWithDomeGallery() {
             ref={chevronRef}
             style={{
               position: "absolute",
-              bottom: "-16rem",
+              bottom: "10rem",
               left: "50%",
               transform: "translateX(-50%)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               gap: 8,
-              zIndex: -1,
+              zIndex: 1000,
               pointerEvents: "none",
             }}
           >
@@ -317,7 +326,7 @@ export function HeroWithDomeGallery() {
                 fontWeight: 600,
                 letterSpacing: ".1em",
                 textTransform: "uppercase",
-                color: "var(--text-muted)",
+                color: "red",
               }}
             >
               Scroll to explore
@@ -351,35 +360,6 @@ export function HeroWithDomeGallery() {
           }}
         >
           {/* Section header */}
-          {/* <div
-            ref={domeInnerRef}
-            style={{
-              maxWidth: "var(--max)",
-              margin: "0 auto",
-              padding: "32px 40px 12px",
-              textAlign: "center",
-              opacity: 1,
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            <div className="kiru-overline" style={{ justifyContent: "center" }}>
-              Our Work
-            </div>
-            <h2 className="kiru-section-title" style={{ marginBottom: 12 }}>
-              Products We've Shipped
-            </h2>
-            <p
-              style={{
-                fontSize: ".72rem",
-                color: "var(--text-muted)",
-                fontStyle: "italic",
-                letterSpacing: ".04em",
-              }}
-            >
-              ← Drag to rotate · Scroll inside to navigate →
-            </p>
-          </div> */}
 
           {/* ── THE DOME GALLERY ── */}
           <div
@@ -408,7 +388,7 @@ export function HeroWithDomeGallery() {
                 maxVerticalRotationDeg={25}
                 segments={34}
                 dragDampening={2}
-                // grayscale
+                grayscale={false}
                 overlayBlurColor="transparent"
               />
             </div>
